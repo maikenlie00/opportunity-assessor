@@ -1,0 +1,27 @@
+.app-logo {
+  display: flex;
+  color: white;
+  img {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: auto 0;
+    font-weight: 400;
+  }
+}
+.app-content {
+    padding: 20px;
+}
+
+.dls-navigation-item {
+    .label {
+        display: none;
+    }
+}

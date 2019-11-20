@@ -1,0 +1,63 @@
+<slb-navigation-framework [hasSidenav]="true" [notifications]="true">
+  <slb-framework-toolbar>
+    <ng-content *ngTemplateOutlet="toolbar"></ng-content>
+  </slb-framework-toolbar>
+  <slb-framework-sidenav>
+    <ng-content *ngTemplateOutlet="sidenav"></ng-content>
+  </slb-framework-sidenav>
+  <slb-framework-content>
+    <ng-content *ngTemplateOutlet="content"></ng-content>
+  </slb-framework-content>
+</slb-navigation-framework>
+
+<ng-template #toolbar>
+  <!-- * * * The content below is only a placeholder and can be replaced * * * -->
+  <mat-toolbar-row>
+    <div class="app-logo">
+      <img src="assets/images/delphi.png" alt="My App" />
+      <h4>My App</h4>
+    </div>
+    <span class="dls-toolbar-spacer"></span>
+    <div class="dls-toolbar-button-container">
+      <button slb-icon-button title="Help">
+        <mat-icon svgIcon="help"></mat-icon>
+      </button>
+      <slb-notifications-panel [capacity]="notificationCount" [notificationItems]="notificationItems"
+        [viewAllButtonVisible]="true">
+      </slb-notifications-panel>
+      <slb-logout [userName]="'John Doe'">
+      </slb-logout>
+    </div>
+  </mat-toolbar-row>
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+</ng-template>
+
+<ng-template #sidenav>
+  <mat-nav-list>
+    <!-- * * * The content below is only a placeholder and can be replaced * * * -->
+    <a class="dls-navigation-item" title="Home" [routerLink]="['home']">
+      <mat-icon svgIcon="home"></mat-icon>
+      <span class="label">Home</span>
+    </a>
+    <a class="dls-navigation-item" title="Notifications" [routerLink]="['notifications']">
+        <mat-icon svgIcon="layers"></mat-icon>
+        <span class="label">Notifications</span>
+      </a>
+    <span class="dls-navigation-item" title="More items">
+      <mat-icon svgIcon="more"></mat-icon>
+    </span>
+    <a class="dls-navigation-item" title="Themes" [routerLink]="['themes']">
+      <mat-icon svgIcon="color-picker"></mat-icon>
+      <span class="label">Themes</span>
+    </a>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  </mat-nav-list>
+</ng-template>
+
+<ng-template #content>
+  <!-- * * * The content below is only a placeholder and can be replaced * * * -->
+  <div class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+</ng-template>

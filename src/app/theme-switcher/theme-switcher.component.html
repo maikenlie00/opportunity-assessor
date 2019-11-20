@@ -1,0 +1,4 @@
+<h3>Theme switching</h3>
+<mat-slide-toggle [(ngModel)]="isDarkTheme" (change)="onThemeChange($event)">
+    {{ isDarkTheme ? "Dark" : "Light" }}
+</mat-slide-toggle>
