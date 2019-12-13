@@ -1,5 +1,5 @@
 import { Component, } from '@angular/core';
-import { MessageService, SlbSeverity } from '@slb-dls/angular-material';
+import { MessageService, SlbSeverity } from '@slb-dls/angular-material/notification';
 
 @Component({
   selector: 'app-notifications',

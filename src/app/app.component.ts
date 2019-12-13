@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
-import { SlbNotificationItem, MessageService } from '@slb-dls/angular-material';
+import { SlbNotificationItem, } from '@slb-dls/angular-material/notifications-panel';
+import { MessageService } from '@slb-dls/angular-material/notification';
 
 @Component({
   selector: 'app-root',
