@@ -18,7 +18,6 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions } from '@ang
 
 import { SlbNavigationFrameworkModule} from '@slb-dls/angular-material/navigation-framework';
 import { SlbSharedModule } from '@slb-dls/angular-material/shared';
-import { SlbIconModule } from '@slb-dls/angular-material/icon';
 import { SlbNotificationModule, MessageService } from '@slb-dls/angular-material/notification';
 import { SlbNotificationsPanelModule } from '@slb-dls/angular-material/notifications-panel';
 import { SlbLogoutModule } from '@slb-dls/angular-material/logout';
@@ -62,7 +61,6 @@ const appearance: MatFormFieldDefaultOptions = {
     SlbSharedModule,
     SlbButtonModule,
     SlbPopoverModule,
-    SlbIconModule,
     SlbNotificationModule,
     SlbNotificationsPanelModule,
     SlbNavigationFrameworkModule,
