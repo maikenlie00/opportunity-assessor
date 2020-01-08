@@ -13,8 +13,9 @@ export class NotificationsComponent {
   sayHello(target) {
     this.messageService.add({
       severity: SlbSeverity.Info,
-      detail: 'Welcome to DLS Agular Material Boilerplate app!',
+      detail: 'Welcome to <b>DLS Agular Material Boilerplate</b> app!',
       summary: 'Hello',
+      asHtml: true,
       target,
     });
   }
