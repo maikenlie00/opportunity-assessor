@@ -23,7 +23,7 @@ import { SlbNotificationsPanelModule } from '@slb-dls/angular-material/notificat
 import { SlbLogoutModule } from '@slb-dls/angular-material/logout';
 import { SlbPopoverModule } from '@slb-dls/angular-material/popover';
 import { SlbButtonModule } from '@slb-dls/angular-material/button';
-import { SLB_DATE_FORMATS } from '@slb-dls/angular-material/date-and-time-pickers';
+import { SLB_MOMENT_DATE_FORMATS } from '@slb-dls/angular-material/date-and-time-pickers';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -67,7 +67,7 @@ const appearance: MatFormFieldDefaultOptions = {
     SlbLogoutModule
   ],
   providers: [
-    { provide: MAT_DATE_FORMATS, useValue: SLB_DATE_FORMATS },
+    { provide: MAT_DATE_FORMATS, useValue: SLB_MOMENT_DATE_FORMATS },
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS] },
     { provide: MessageService, useClass: MessageService },
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: appearance },
