@@ -21,7 +21,12 @@ export class ThemeSwitcherComponent implements OnInit {
     this.isDarkTheme = this.themesService.currentTheme === Themes.Dark;
   }
 
-  onThemeChange(event: any): void {
+  onThemeChange(): void {
     this.themesService.switchTheme(this.isDarkTheme ? Themes.Dark : Themes.Light);
+  }
+
+  _onButtonClick() {
+    this.isDarkTheme = !this.isDarkTheme;
+    this.onThemeChange();
   }
 }

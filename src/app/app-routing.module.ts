@@ -14,14 +14,24 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    data: {
+      title: 'Home',
+    }
   },
   {
     path: 'notifications',
     component: NotificationsComponent,
+    data: {
+      title: 'Build-In Notifications',
+    }
   },
   {
     path: 'themes',
     component: ThemeSwitcherComponent,
+    data: {
+      title: 'Theme Switching',
+      showHeader: false,
+    }
   },
 ];
 

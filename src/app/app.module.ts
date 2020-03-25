@@ -30,6 +30,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { SlbBreadcrumbsModule } from '@slb-dls/angular-material/breadcrumbs';
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: 'outline',
@@ -67,6 +68,7 @@ const appearance: MatFormFieldDefaultOptions = {
     SlbNotificationModule,
     SlbNotificationsPanelModule,
     SlbNavigationFrameworkModule,
+    SlbBreadcrumbsModule,
     SlbLogoutModule
   ],
   providers: [

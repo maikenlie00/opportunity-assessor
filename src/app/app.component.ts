@@ -1,21 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router, RoutesRecognized } from '@angular/router';
+import { filter, map } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
+import { LinkItem, isDefined } from '@slb-dls/angular-material/shared';
 import { SlbNotificationItem, } from '@slb-dls/angular-material/notifications-panel';
-import { MessageService } from '@slb-dls/angular-material/notification';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
+export class AppComponent implements OnDestroy {
+    notificationCount: 10;
+    notificationItems: SlbNotificationItem[] = [];
 
-export class AppComponent {
-  notificationCount: 10;
-  notificationItems: SlbNotificationItem[] = [];
+    showHeader: boolean = true;
+    pageTitle: string = '';
+    secondaryLinks: LinkItem[];
 
-  constructor(matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer) {
-    matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg-symbols.svg'));
-  }
+    private routerSubscription = Subscription.EMPTY;
 
+    constructor(
+        private router: Router,
+        private matIconRegistry: MatIconRegistry,
+        private domSanitizer: DomSanitizer
+    ) {
+        matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg-symbols.svg'));
+
+        this.routerSubscription = router.events.pipe(
+            filter(e => e instanceof RoutesRecognized),
+            map(e => e as RoutesRecognized))
+        .subscribe(e => this.onRouteChange(e));
+    }
+
+    ngOnDestroy(): void {
+        this.routerSubscription.unsubscribe();
+    }
+
+    private onRouteChange(event: RoutesRecognized): void {
+        const data = event.state.root.firstChild.data;
+        this.showHeader = isDefined(data.showHeader) ? data.showHeader : true;
+        this.pageTitle = data.title;
+        this.secondaryLinks = data.links;
+    }
 }
