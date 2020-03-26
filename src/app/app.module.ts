@@ -14,7 +14,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions, MatFormField } from '@angular/material/form-field';
-import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
+import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
 
 import { SlbNavigationFrameworkModule} from '@slb-dls/angular-material/navigation-framework';
 import { SlbSharedModule } from '@slb-dls/angular-material/shared';
@@ -53,6 +53,7 @@ const appearance: MatFormFieldDefaultOptions = {
     FormsModule,
     ReactiveFormsModule,
 
+    MatMomentDateModule,
     MatFormFieldModule,
     MatButtonModule,
     MatToolbarModule,
