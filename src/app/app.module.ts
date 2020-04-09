@@ -14,7 +14,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions, MatFormField } from '@angular/material/form-field';
-import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
+import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
 
 import { SlbNavigationFrameworkModule} from '@slb-dls/angular-material/navigation-framework';
 import { SlbSharedModule } from '@slb-dls/angular-material/shared';
@@ -30,6 +30,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { SlbBreadcrumbsModule } from '@slb-dls/angular-material/breadcrumbs';
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: 'outline',
@@ -52,6 +53,7 @@ const appearance: MatFormFieldDefaultOptions = {
     FormsModule,
     ReactiveFormsModule,
 
+    MatMomentDateModule,
     MatFormFieldModule,
     MatButtonModule,
     MatToolbarModule,
@@ -67,6 +69,7 @@ const appearance: MatFormFieldDefaultOptions = {
     SlbNotificationModule,
     SlbNotificationsPanelModule,
     SlbNavigationFrameworkModule,
+    SlbBreadcrumbsModule,
     SlbLogoutModule
   ],
   providers: [
