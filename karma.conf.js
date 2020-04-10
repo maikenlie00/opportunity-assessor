@@ -12,6 +12,13 @@ module.exports = function (config) {
       require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
+    files:[
+      { pattern: './node_modules/@slb-dls/angular-material/assets/icons/svg-symbols.svg', watched: false, included: false, nocache: false, served: true }
+    ],
+    proxies: {
+      "/assets/": "/base/assets/",
+      "/assets/": "/base/node_modules/@slb-dls/angular-material/assets/",
+    },
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },

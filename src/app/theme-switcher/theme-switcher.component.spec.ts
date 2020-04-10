@@ -1,4 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { SlbNavigationFrameworkModule } from '@slb-dls/angular-material/navigation-framework';
+import { SlbBreadcrumbsModule } from '@slb-dls/angular-material/breadcrumbs';
 
 import { ThemeSwitcherComponent } from './theme-switcher.component';
 
@@ -8,16 +15,28 @@ describe('ThemeSwitcherComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ThemeSwitcherComponent ]
+      imports: [
+        HttpClientModule,
+        FormsModule,
+        MatIconModule,
+        MatSlideToggleModule,
+
+        SlbNavigationFrameworkModule,
+        SlbBreadcrumbsModule,
+      ],
+      declarations: [ThemeSwitcherComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
-  beforeEach(() => {
+  beforeEach(inject([MatIconRegistry, DomSanitizer], (iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) => {
+    iconRegistry.addSvgIconSet(
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg-symbols.svg')
+    );
     fixture = TestBed.createComponent(ThemeSwitcherComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  }));
 
   it('should create', () => {
     expect(component).toBeTruthy();

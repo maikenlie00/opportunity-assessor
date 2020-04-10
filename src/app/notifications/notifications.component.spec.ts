@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NotificationsComponent } from './notifications.component';
+import { MessageService, SlbNotificationModule } from '@slb-dls/angular-material/notification';
+import { SlbButtonModule } from '@slb-dls/angular-material/button';
 
 describe('NotificationsComponent', () => {
   let component: NotificationsComponent;
@@ -8,7 +10,12 @@ describe('NotificationsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotificationsComponent ]
+      imports: [
+        SlbButtonModule,
+        SlbNotificationModule,
+      ],
+      declarations: [ NotificationsComponent ],
+      providers: [MessageService],
     })
     .compileComponents();
   }));
