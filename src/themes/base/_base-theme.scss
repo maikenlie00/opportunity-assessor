@@ -1,0 +1,5 @@
+@import "../../app/theme-switcher/theme-switcher.theme";
+
+@mixin theme-base($theme, $typography) {
+    @include theme-switcher($theme, $typography);
+}

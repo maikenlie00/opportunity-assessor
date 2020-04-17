@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ThemesService, Themes } from './theme.service';
 
 
 @Component({
   selector: 'app-theme-switcher',
   templateUrl: './theme-switcher.component.html',
-  styleUrls: ['./theme-switcher.component.scss']
+  styleUrls: ['./theme-switcher.component.scss'],
+  host: {
+    'class': 'app-theme-switcher'
+  },
+  encapsulation: ViewEncapsulation.None
 })
 export class ThemeSwitcherComponent implements OnInit {
 

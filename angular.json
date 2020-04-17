@@ -32,8 +32,19 @@
                 "output": "assets"
               }
             ],
+            "extractCss": true,
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/themes/light/theme.scss",
+                "bundleName": "assets/styles/app-light-theme",
+                "lazy": true
+              },
+              {
+                "input": "src/themes/dark/theme.scss",
+                "bundleName": "assets/styles/app-dark-theme",
+                "lazy": true
+              }
             ],
             "scripts": []
           },
@@ -129,6 +140,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "dls-boilerplate-material"
 }

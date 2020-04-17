@@ -6,6 +6,23 @@ export enum Themes {
     Dark = 'Dark',
 }
 
+export const themeConfig = new Map<Themes, string[]>([
+    [
+        Themes.Light,
+        [
+            '/assets/styles/dls-mat-light-theme.css',
+            '/assets/styles/app-light-theme.css',
+        ]
+    ],
+    [
+        Themes.Dark,
+        [
+            '/assets/styles/dls-mat-dark-theme.css',
+            '/assets/styles/app-dark-theme.css',
+        ]
+    ],
+]);
+
 @Injectable({
     providedIn: 'root',
 })
@@ -26,22 +43,36 @@ export class ThemesService {
 
     switchTheme(name: Themes): void {
         this._currentTheme = name;
-        this.switchStyleSheets(name);
-        this.themeChanged.next(name);
+        this.switchStyleSheets(this._currentTheme);
+        this.themeChanged.next(this._currentTheme);
     }
 
-    private switchStyleSheets(name: string) {
-        // Get all stylesheets that have a title attribute
+    private switchStyleSheets(name: Themes) {
+        if (!themeConfig.has(name)) {
+            return;
+        }
+
+        // current theme config
+        const config = [...themeConfig.get(name)];
+
+        // Get all stylesheets marked with 'theme' class
         const sheets = Array.from(
             this.documentReference.getElementsByTagName('link')
-        ).filter(l => l.rel.includes('stylesheet') && l.title);
+        ).filter(l => l.rel.includes('stylesheet') && l.className === 'theme');
 
-        // Check if any stylesheets contain the name: if not, don’t change
-        if (sheets.find(s => s.title.includes(name))) {
-            // Disable all stylesheets except for the ones with the specified name
-            sheets.forEach(s => {
-                s.disabled = !s.title.includes(name);
-            });
-        }
+        config.forEach(link => {
+            const style = sheets.shift() || this.addStyleSheet();
+            style.href = `${link}`;
+        });
+
+        sheets.forEach(it => it.remove());
+    }
+
+    private addStyleSheet(): HTMLLinkElement {
+        const style = this.documentReference.createElement('link');
+        style.rel = 'stylesheet';
+        style.className = 'theme';
+        this.documentReference.getElementsByTagName('head')[0].appendChild(style);
+        return style;
     }
 }

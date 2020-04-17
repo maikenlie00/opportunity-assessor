@@ -1,0 +1,8 @@
+@import '../../../node_modules/@slb-dls/angular-material/assets/styles/theming/dls-typography';
+@import '../../../node_modules/@slb-dls/angular-material/assets/styles/theming/variables/dls-dark-theme';
+
+$app-dark-base: (
+    /*put your vars here*/
+);
+
+$app-theme-params: map-merge($app-dark-base, $dls-dark-base);

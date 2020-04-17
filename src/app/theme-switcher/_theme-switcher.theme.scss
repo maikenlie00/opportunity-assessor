@@ -1,0 +1,16 @@
+@mixin theme-switcher($theme, $typography) {
+    $color-input-background: map-get($theme, 'color-input-background');
+    $color-container-border: map-get($theme, 'color-container-border');
+    $composite-border-radius-container: map-get($theme, 'composite-border-radius-container');
+    
+    .app-theme-switcher {
+        .app-theme-switcher-header {
+            background-color: $color-input-background;
+            border-bottom: 1px solid $color-container-border;
+        }
+    }
+    
+    .dls-sidenav-content.with-sidenav.with-toolbar .app-theme-switcher-header {
+        border-top-left-radius: $composite-border-radius-container;
+    }
+}
