@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ThemesService, Themes } from './theme.service';
-
+import { Component, ViewEncapsulation } from '@angular/core';
+import { ThemeService } from '@slb-dls/angular-material/core';
+import { Themes } from '../../themes/theme.config';
 
 @Component({
   selector: 'app-theme-switcher',
@@ -11,26 +11,22 @@ import { ThemesService, Themes } from './theme.service';
   },
   encapsulation: ViewEncapsulation.None
 })
-export class ThemeSwitcherComponent implements OnInit {
+export class ThemeSwitcherComponent {
 
   isDarkTheme = false;
 
-  constructor(private themesService: ThemesService) {
+  constructor(private themesService: ThemeService) {
     this.themesService.themeChanged.subscribe(newTheme => {
       this.isDarkTheme = newTheme === Themes.Dark;
     });
   }
 
-  ngOnInit(): void {
-    this.isDarkTheme = this.themesService.currentTheme === Themes.Dark;
-  }
-
-  onThemeChange(): void {
+  _onThemeToggleChange(): void {
     this.themesService.switchTheme(this.isDarkTheme ? Themes.Dark : Themes.Light);
   }
 
   _onButtonClick() {
     this.isDarkTheme = !this.isDarkTheme;
-    this.onThemeChange();
+    this._onThemeToggleChange();
   }
 }

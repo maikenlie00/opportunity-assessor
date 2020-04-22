@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,26 +16,27 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions, MatFormField } from '@angular/material/form-field';
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
 
-import { SlbNavigationFrameworkModule} from '@slb-dls/angular-material/navigation-framework';
+import { SlbNavigationFrameworkModule } from '@slb-dls/angular-material/navigation-framework';
 import { SlbSharedModule } from '@slb-dls/angular-material/shared';
 import { SlbNotificationModule, MessageService } from '@slb-dls/angular-material/notification';
 import { SlbNotificationsPanelModule } from '@slb-dls/angular-material/notifications-panel';
 import { SlbLogoutModule } from '@slb-dls/angular-material/logout';
 import { SlbPopoverModule } from '@slb-dls/angular-material/popover';
 import { SlbButtonModule } from '@slb-dls/angular-material/button';
+import { SlbBreadcrumbsModule } from '@slb-dls/angular-material/breadcrumbs';
 import { SLB_MOMENT_DATE_FORMATS } from '@slb-dls/angular-material/date-and-time-pickers';
+import { SLB_THEMING_OPTIONS } from '@slb-dls/angular-material/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
 import { NotificationsComponent } from './notifications/notifications.component';
-import { SlbBreadcrumbsModule } from '@slb-dls/angular-material/breadcrumbs';
+import { themeConfig } from '../themes/theme.config';
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: 'outline',
 };
-
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ const appearance: MatFormFieldDefaultOptions = {
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS] },
     { provide: MessageService, useClass: MessageService },
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: appearance },
+    { provide: SLB_THEMING_OPTIONS, useValue: themeConfig },
   ],
   bootstrap: [AppComponent]
 })
