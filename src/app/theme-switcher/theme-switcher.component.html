@@ -1,4 +1,4 @@
-<div class="dls-page-header-container">
+<div class="app-theme-switcher-header">
     <slb-framework-page-header
         displayBackButton="true"
         pageTitle="Theme switching"
@@ -26,9 +26,8 @@
         </button>
     </slb-framework-page-header>
 </div>
-
 <div class="app-content">
-    <mat-slide-toggle [(ngModel)]="isDarkTheme" (change)="onThemeChange()">
+    <mat-slide-toggle [(ngModel)]="isDarkTheme" (change)="_onThemeToggleChange()">
         {{ isDarkTheme ? "Dark" : "Light" }}
     </mat-slide-toggle>
 </div>
