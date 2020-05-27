@@ -2,37 +2,40 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
-import { NotificationsComponent } from './notifications/notifications.component';
+import { PreviewComponent } from "./preview/preview.component";
+
+// import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
+// import { NotificationsComponent } from './notifications/notifications.component';
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   // redirectTo: '/home',
+  //   pathMatch: 'full'
+  // },
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
+    component: HomeComponent
   },
-  {
-    path: 'home',
-    component: HomeComponent,
-    data: {
-      title: 'Home',
-    }
+  { 
+    path: 'preview',
+    component: PreviewComponent 
   },
-  {
-    path: 'notifications',
-    component: NotificationsComponent,
-    data: {
-      title: 'Build-In Notifications',
-    }
-  },
-  {
-    path: 'themes',
-    component: ThemeSwitcherComponent,
-    data: {
-      title: 'Theme Switching',
-      showHeader: false,
-    }
-  },
+  // {
+  //   path: 'notifications',
+  //   component: NotificationsComponent,
+  //   data: {
+  //     title: 'Build-In Notifications',
+  //   }
+  // },
+  // {
+  //   path: 'themes',
+  //   component: ThemeSwitcherComponent,
+  //   data: {
+  //     title: 'Theme Switching',
+  //     showHeader: false,
+  //   }
+  // },
 ];
 
 @NgModule({

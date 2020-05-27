@@ -1,0 +1,30 @@
+{
+    "cutters": {
+        "blade 1": [
+            {
+                "cutter": "cutter 1",
+                "type": "regular"
+            },
+            {
+                "cutter": "cutter 2",
+                "type": "delta"
+            }
+        ],
+        "blade 2": [
+            {
+                "cutter": "cutter 1",
+                "type": "regular"
+            },
+            {
+
+                "cutter": "cutter 2",
+                "type": "Rhodes"
+            },
+            {
+
+                "cutter": "cutter 3",
+                "type": "Rhodes"
+            }
+        ]
+    }
+}

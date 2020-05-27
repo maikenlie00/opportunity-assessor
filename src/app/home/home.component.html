@@ -1,3 +1,70 @@
-<div class="app-content">
-    <p>Content goes here</p>
+<!-- <div class="header">
+    <ng-template [ngIf]="this.bitService.serialID">
+    </ng-template>
+  </div>
+   -->
+   <div class="center-container">
+    <div class="center-content">
+      <!-- <slb-card-group [spacing]="spacing"> -->
+          <mat-card class="left-card">
+              <mat-card-content>
+                  <form #scanForm="ngForm" (ngSubmit)="onSubmitScanForm(scanForm)">
+                    <mat-form-field slbFormField>
+                      <mat-label>
+                          ENTER SERIAL NUMBER
+                      </mat-label>
+                      <input
+                        type="text"
+                        name="serialNumber"
+                        [(ngModel)]="serialNumber"
+                        matInput
+                        placeholder="Ex: COQ1234..."
+                        required
+                      />
+                    </mat-form-field>
+                    <div>
+                        <button
+                        type="submit"
+                        [disabled]="!scanForm.valid"
+                        color="primary"
+                        slb-secondary-button
+                        >
+                        CONFIRM
+                        </button>
+
+                        <button
+                        type="clear"
+                        [disabled]="!scanForm.valid"
+                        color="primary"
+                        slb-secondary-button
+                        (click)="onClearScanForm(scanForm)"
+                        >
+                        CLEAR
+                        </button>
+                    </div>
+                  </form>
+              </mat-card-content>
+            </mat-card>
+  
+            <mat-card class="right-card">
+              <mat-card-content>
+                <form #bolbolForm="ngForm" (ngSubmit)="onSubmitScanForm(bolbolForm)">
+                  <!-- <mat-form-field slbFormField>
+                    <mat-label>
+                      Serial Number
+                    </mat-label>
+                    <input
+                      type="text"
+                      name="serialNumber"
+                      [(ngModel)]="serialNumber"
+                      matInput
+                      placeholder="Ex: COQ1234..."
+                      required
+                    />
+                  </mat-form-field> -->
+                </form>
+              </mat-card-content>
+            </mat-card>
+        <!-- </slb-card-group> -->
+    </div>
 </div>

@@ -1,0 +1,14 @@
+<div style="position: relative;">
+  <mat-tab-group mat-align-tabs="end" disableRipple="true" style="float: left;">
+    <mat-tab label="Customer Order"> 
+        <img width=100% height=100% src="../../../assets/images/bit_order.png">
+    </mat-tab>
+    <mat-tab label="Intended BOM Order"> 
+        <img width=100% height=100% src="../../../assets/images/bom_data.png">
+    </mat-tab>
+  </mat-tab-group>
+
+  <button style="position: absolute;right: 40px;top: 20px;z-index: 2;" [mat-dialog-close]="true" mat-button class="close-icon">
+    <mat-icon svgIcon="close"></mat-icon>
+  </button>
+</div>

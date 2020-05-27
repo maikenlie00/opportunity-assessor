@@ -1,0 +1,21 @@
+.header {
+  height: 100px;
+  width: 517px;
+  background-color: #39414d;
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 28px;
+  letter-spacing: 0.36px;
+  line-height: 33px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.content {
+  width: 517px;
+  height: 290px;
+  position: relative;
+  padding: 20px;
+}
