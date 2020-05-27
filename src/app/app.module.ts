@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+
 import { DateAdapter, MAT_DATE_LOCALE, MAT_DATE_FORMATS } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -12,10 +13,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatCardModule } from "@angular/material/card";
 import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions, MatFormField } from '@angular/material/form-field';
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
-import { SlbFormFieldModule } from '@slb-dls/angular-material/form-field';
+
 import { SlbNavigationFrameworkModule } from '@slb-dls/angular-material/navigation-framework';
 import { SlbSharedModule } from '@slb-dls/angular-material/shared';
 import { SlbNotificationModule, MessageService } from '@slb-dls/angular-material/notification';
@@ -30,19 +30,9 @@ import { SLB_THEMING_OPTIONS } from '@slb-dls/angular-material/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { Bit3DComponent } from "./Bit3D/Bit3D.component";
-import { PreviewComponent } from "./preview/preview.component";
-import { ReportDialogComponent } from "./dialogs/report-dialog/report-dialog.component";
-// import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
-// import { NotificationsComponent } from './notifications/notifications.component';
-import { BitdataService } from "./shared/bitdata.service";
-// import { themeConfig } from '../themes/theme.config';
-import { NumericEditorComponent } from './shared/numeric-editor/numeric-editor.component';
-// ag-grid
-import { AgGridModule } from '@ag-grid-community/angular';
-import { MatInputModule } from '@angular/material/input'; 
- 
-
+import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { themeConfig } from '../themes/theme.config';
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: 'outline',
@@ -52,9 +42,8 @@ const appearance: MatFormFieldDefaultOptions = {
   declarations: [
     AppComponent,
     HomeComponent,
-    Bit3DComponent,
-    PreviewComponent,
-    ReportDialogComponent,
+    ThemeSwitcherComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
@@ -64,19 +53,17 @@ const appearance: MatFormFieldDefaultOptions = {
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+
     MatMomentDateModule,
     MatFormFieldModule,
     MatButtonModule,
     MatToolbarModule,
     MatListModule,
-    MatInputModule, 
     MatIconModule,
     MatMenuModule,
     MatDialogModule,
     MatSlideToggleModule,
-    MatCardModule,
-    
-    SlbFormFieldModule,
+
     SlbSharedModule,
     SlbButtonModule,
     SlbPopoverModule,
@@ -84,16 +71,14 @@ const appearance: MatFormFieldDefaultOptions = {
     SlbNotificationsPanelModule,
     SlbNavigationFrameworkModule,
     SlbBreadcrumbsModule,
-    SlbLogoutModule,
-    AgGridModule.withComponents([NumericEditorComponent]),
+    SlbLogoutModule
   ],
   providers: [
     { provide: MAT_DATE_FORMATS, useValue: SLB_MOMENT_DATE_FORMATS },
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS] },
     { provide: MessageService, useClass: MessageService },
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: appearance },
-    // { provide: SLB_THEMING_OPTIONS, useValue: themeConfig },
-    BitdataService,
+    { provide: SLB_THEMING_OPTIONS, useValue: themeConfig },
   ],
   bootstrap: [AppComponent]
 })

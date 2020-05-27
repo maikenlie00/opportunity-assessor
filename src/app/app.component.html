@@ -1,34 +1,84 @@
 <slb-navigation-framework 
   [applicationLogo]="'assets/logos/delfi.png'"
-  [applicationName]="'Staging'"
-  [hasSidenav]="false" 
-  [notifications]="false"
+  [applicationName]="'My app'"
+  [menu]="menu"
+  [hasSidenav]="true" 
+  [notifications]="true"
   [pageTitle]="pageTitle"
-  [displayViewModeButtons] = "false"
 >
   <slb-framework-toolbar>
     <ng-content *ngTemplateOutlet="toolbar"></ng-content>
   </slb-framework-toolbar>
 
+  <slb-framework-sidenav>
+    <ng-content *ngTemplateOutlet="sidenav"></ng-content>
+  </slb-framework-sidenav>
+
   <slb-framework-content>
     <ng-content *ngTemplateOutlet="content"></ng-content>
   </slb-framework-content>
 
+  <slb-framework-page-header
+    *ngIf="showHeader"
+    displayBackButton="true"
+    [pageTitle]="pageTitle"
+    [items]="secondaryLinks"
+  >
+    <!-- * * * The content below is only a placeholder and can be replaced * * * -->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  </slb-framework-page-header>
 </slb-navigation-framework>
 
 <ng-template #toolbar>
   <!-- * * * The content below is only a placeholder and can be replaced * * * -->
-    <button slb-icon-button title="Duration">
-      <mat-icon svgIcon="duration"></mat-icon>
+    <button slb-icon-button title="Help">
+      <mat-icon svgIcon="help"></mat-icon>
     </button>
-    <button slb-icon-button title="Weight">
-      <mat-icon svgIcon="dashboard-2"></mat-icon>
-    </button>
-    <button slb-icon-button title="Status">
-      <mat-icon svgIcon="settings"></mat-icon>
-    </button>
+    <slb-notifications-panel [capacity]="notificationCount" [notificationItems]="notificationItems"
+      [viewAllButtonVisible]="true">
+    </slb-notifications-panel>
+    <slb-logout [userName]="'John Doe'">
+    </slb-logout>
   <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 </ng-template>
+
+<ng-template #sidenav>
+  <mat-nav-list class="app-sidenav">
+    <!-- * * * The content below is only a placeholder and can be replaced * * * -->
+    <a class="dls-navigation-item" title="Home" [routerLink]="['home']">
+      <mat-icon svgIcon="home"></mat-icon>
+    </a>
+    <a class="dls-navigation-item" title="Notifications" [routerLink]="['notifications']">
+        <mat-icon svgIcon="layers"></mat-icon>
+    </a>
+    <span class="dls-navigation-item" title="More items">
+      <mat-icon svgIcon="more"></mat-icon>
+    </span>
+    <a class="dls-navigation-item" title="Themes" [routerLink]="['themes']">
+      <mat-icon svgIcon="color-picker"></mat-icon>
+    </a>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  </mat-nav-list>
+</ng-template>
+
+<mat-menu #menu="matMenu">
+  <a mat-menu-item title="Home" [routerLink]="['home']">
+    <mat-icon svgIcon="home"></mat-icon>
+    <span>Home</span>
+  </a>
+  <a mat-menu-item title="Notifications" [routerLink]="['notifications']">
+      <mat-icon svgIcon="layers"></mat-icon>
+      <span>Notifications</span>
+    </a>
+  <button mat-menu-item disabled>
+    <mat-icon svgIcon="more"></mat-icon>
+    <span>More items</span>
+  </button>
+  <a mat-menu-item title="Themes" [routerLink]="['themes']">
+    <mat-icon svgIcon="color-picker"></mat-icon>
+    <span>Themes</span>
+  </a>
+</mat-menu>
 
 <ng-template #content>
   <!-- * * * The content below is only a placeholder and can be replaced * * * -->
