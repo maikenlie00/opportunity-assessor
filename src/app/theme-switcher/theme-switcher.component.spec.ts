@@ -8,6 +8,7 @@ import { SlbNavigationFrameworkModule } from '@slb-dls/angular-material/navigati
 import { SlbBreadcrumbsModule } from '@slb-dls/angular-material/breadcrumbs';
 
 import { ThemeSwitcherComponent } from './theme-switcher.component';
+import { SlbButtonModule } from '@slb-dls/angular-material/button';
 
 describe('ThemeSwitcherComponent', () => {
   let component: ThemeSwitcherComponent;
@@ -23,6 +24,7 @@ describe('ThemeSwitcherComponent', () => {
 
         SlbNavigationFrameworkModule,
         SlbBreadcrumbsModule,
+        SlbButtonModule,
       ],
       declarations: [ThemeSwitcherComponent]
     })
