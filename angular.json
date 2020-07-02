@@ -28,6 +28,7 @@
               "src/assets",
               {
                 "glob": "**/*",
+                "ignore": ["styles"],
                 "input": "./node_modules/@slb-dls/angular-material/assets",
                 "output": "assets"
               }
@@ -36,13 +37,27 @@
             "styles": [
               "src/styles.scss",
               {
+                "input": "./node_modules/@slb-dls/angular-material/assets/styles/dls-mat-light-theme.css",
+                "bundleName": "assets/styles/dls-mat-light-theme",
+                "inject": false,
+                "lazy": true
+              },
+              {
+                "input": "./node_modules/@slb-dls/angular-material/assets/styles/dls-mat-dark-theme.css",
+                "bundleName": "assets/styles/dls-mat-dark-theme",
+                "inject": false,
+                "lazy": true
+              },
+              {
                 "input": "src/themes/light/theme.scss",
                 "bundleName": "assets/styles/app-light-theme",
+                "inject": false,
                 "lazy": true
               },
               {
                 "input": "src/themes/dark/theme.scss",
                 "bundleName": "assets/styles/app-dark-theme",
+                "inject": false,
                 "lazy": true
               }
             ],
@@ -67,7 +82,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
+                  "maximumWarning": "3mb",
                   "maximumError": "5mb"
                 },
                 {
@@ -106,9 +121,17 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "ignore": ["styles"],
+                "input": "./node_modules/@slb-dls/angular-material/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
+              "./node_modules/@slb-dls/angular-material/assets/styles/dls-mat-light-theme.css",
+              "src/themes/light/theme.scss",
               "src/styles.scss"
             ],
             "scripts": []
