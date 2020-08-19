@@ -33,6 +33,8 @@ import { HomeComponent } from './home/home.component';
 import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { themeConfig } from '../themes/theme.config';
+import { SlbFormFieldModule } from '@slb-dls/angular-material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: 'outline',
@@ -55,6 +57,7 @@ const appearance: MatFormFieldDefaultOptions = {
     ReactiveFormsModule,
 
     MatMomentDateModule,
+    MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
     MatToolbarModule,
@@ -66,6 +69,7 @@ const appearance: MatFormFieldDefaultOptions = {
 
     SlbSharedModule,
     SlbButtonModule,
+    SlbFormFieldModule,
     SlbPopoverModule,
     SlbNotificationModule,
     SlbNotificationsPanelModule,
