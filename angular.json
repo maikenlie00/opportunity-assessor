@@ -39,26 +39,22 @@
               {
                 "input": "./node_modules/@slb-dls/angular-material/assets/styles/dls-mat-light-theme.css",
                 "bundleName": "assets/styles/dls-mat-light-theme",
-                "inject": false,
-                "lazy": true
+                "inject": false
               },
               {
                 "input": "./node_modules/@slb-dls/angular-material/assets/styles/dls-mat-dark-theme.css",
                 "bundleName": "assets/styles/dls-mat-dark-theme",
-                "inject": false,
-                "lazy": true
+                "inject": false
               },
               {
                 "input": "src/themes/light/theme.scss",
                 "bundleName": "assets/styles/app-light-theme",
-                "inject": false,
-                "lazy": true
+                "inject": false
               },
               {
                 "input": "src/themes/dark/theme.scss",
                 "bundleName": "assets/styles/app-dark-theme",
-                "inject": false,
-                "lazy": true
+                "inject": false
               }
             ],
             "scripts": []
