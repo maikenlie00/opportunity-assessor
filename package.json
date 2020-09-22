@@ -23,7 +23,7 @@
     "@angular/cdk": "^10.2.0",
     "@angular/material": "^10.2.0",
     "@angular/material-moment-adapter": "^10.2.0",
-    "@slb-dls/angular-material": "^13.0.0-alpha.3",
+    "@slb-dls/angular-material": "^13.0.0-alpha.4",
     "moment": "^2.24.0",
     "uuid": "^8.3.0",
     "rxjs": "^6.6.0",
