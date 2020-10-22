@@ -7,6 +7,16 @@ export enum Themes {
 
 export const themeConfig: SlbThemingOptions = {
     defaultTheme: 'light',
+    classMap: new Map<string, string[]>([
+        [
+            Themes.Light,
+            [ 'material-theme-light' ]
+        ],
+        [
+            Themes.Dark,
+            [ 'material-theme-dark' ]
+        ],
+    ]),
     stylesheetMap: new Map<string, string[]>([
         [
             Themes.Light,
