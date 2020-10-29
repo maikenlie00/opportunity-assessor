@@ -21,15 +21,15 @@ export const themeConfig: SlbThemingOptions = {
         [
             Themes.Light,
             [
-                '/assets/styles/dls-mat-light-theme.css',
-                '/assets/styles/app-light-theme.css',
+                'assets/styles/dls-mat-light-theme.css',
+                'assets/styles/app-light-theme.css',
             ]
         ],
         [
             Themes.Dark,
             [
-                '/assets/styles/dls-mat-dark-theme.css',
-                '/assets/styles/app-dark-theme.css',
+                'assets/styles/dls-mat-dark-theme.css',
+                'assets/styles/app-dark-theme.css',
             ]
         ],
     ])
