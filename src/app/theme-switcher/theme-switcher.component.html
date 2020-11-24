@@ -1,7 +1,12 @@
-<div slbPageHeader>
+<div 
+    slbPageHeader
+    [hideForImmersiveMode]="true"
+>
     <slb-framework-page-header
+        slbFrameworkPageHeader
         displayBackButton="true"
         pageTitle="Theme switching"
+        [items]="secondaryLinks"
     >
         <button 
             slb-icon-button 

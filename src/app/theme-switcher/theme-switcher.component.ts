@@ -1,5 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ThemeService } from '@slb-dls/angular-material/core';
+import { LinkItem } from '@slb-dls/angular-material/shared';
 import { Themes } from '../../themes/theme.config';
 
 @Component({
@@ -15,7 +16,10 @@ export class ThemeSwitcherComponent {
 
   isDarkTheme = false;
 
-  constructor(private themesService: ThemeService) {
+  secondaryLinks: LinkItem[] = [];
+
+  constructor(
+    private themesService: ThemeService) {
     this.themesService.themeChanged.subscribe(newTheme => {
       this.isDarkTheme = newTheme === Themes.Dark;
     });
