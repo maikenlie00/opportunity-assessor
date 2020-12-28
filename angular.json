@@ -28,12 +28,13 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "ignore": ["styles"],
+                "ignore": [
+                  "styles"
+                ],
                 "input": "./node_modules/@slb-dls/angular-material/assets",
                 "output": "assets"
               }
             ],
-            "extractCss": true,
             "styles": [
               "src/styles.scss",
               {
@@ -70,7 +71,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
