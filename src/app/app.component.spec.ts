@@ -1,4 +1,4 @@
-import { TestBed, async, inject, ComponentFixture } from '@angular/core/testing';
+import { TestBed, inject, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -24,7 +24,7 @@ describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let component: AppComponent;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [
         BrowserAnimationsModule,
@@ -52,7 +52,7 @@ describe('AppComponent', () => {
       providers: [MessageService],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(inject([MatIconRegistry, DomSanitizer], (iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) => {
     iconRegistry.addSvgIconSet(

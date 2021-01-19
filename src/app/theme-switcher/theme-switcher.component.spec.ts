@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import { ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -9,27 +9,30 @@ import { SlbBreadcrumbsModule } from '@slb-dls/angular-material/breadcrumbs';
 
 import { ThemeSwitcherComponent } from './theme-switcher.component';
 import { SlbButtonModule } from '@slb-dls/angular-material/button';
+import { CommonModule } from '@angular/common';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ThemeSwitcherComponent', () => {
   let component: ThemeSwitcherComponent;
   let fixture: ComponentFixture<ThemeSwitcherComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [
+        CommonModule,
         HttpClientModule,
         FormsModule,
         MatIconModule,
         MatSlideToggleModule,
 
-        SlbNavigationFrameworkModule,
         SlbBreadcrumbsModule,
         SlbButtonModule,
       ],
+      schemas: [NO_ERRORS_SCHEMA],
       declarations: [ThemeSwitcherComponent]
     })
       .compileComponents();
-  }));
+  });
 
   beforeEach(inject([MatIconRegistry, DomSanitizer], (iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) => {
     iconRegistry.addSvgIconSet(

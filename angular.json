@@ -28,37 +28,34 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "ignore": ["styles"],
+                "ignore": [
+                  "styles"
+                ],
                 "input": "./node_modules/@slb-dls/angular-material/assets",
                 "output": "assets"
               }
             ],
-            "extractCss": true,
             "styles": [
               "src/styles.scss",
               {
                 "input": "./node_modules/@slb-dls/angular-material/assets/styles/dls-mat-light-theme.css",
                 "bundleName": "assets/styles/dls-mat-light-theme",
-                "inject": false,
-                "lazy": true
+                "inject": false
               },
               {
                 "input": "./node_modules/@slb-dls/angular-material/assets/styles/dls-mat-dark-theme.css",
                 "bundleName": "assets/styles/dls-mat-dark-theme",
-                "inject": false,
-                "lazy": true
+                "inject": false
               },
               {
                 "input": "src/themes/light/theme.scss",
                 "bundleName": "assets/styles/app-light-theme",
-                "inject": false,
-                "lazy": true
+                "inject": false
               },
               {
                 "input": "src/themes/dark/theme.scss",
                 "bundleName": "assets/styles/app-dark-theme",
-                "inject": false,
-                "lazy": true
+                "inject": false
               }
             ],
             "scripts": []
@@ -74,7 +71,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,

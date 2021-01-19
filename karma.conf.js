@@ -16,7 +16,7 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-junit-reporter'),
-      require('karma-coverage-istanbul-reporter'),
+      require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     files:[
@@ -29,25 +29,21 @@ module.exports = function (config) {
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
-    coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../test-reports/app'),
-      reports: ['html', 'lcovonly', "cobertura", 'text-summary'],
-      fixWebpackSourcePaths: true,
-      "report-config": {
-          cobertura: {
-              file: "cobertura.xml",
-          },
-          lcovonly: {
-              file: "coverage.lcov"
-          },
-      }
+    coverageReporter: {
+        dir: require('path').join(__dirname, '../test-reports/app'),
+        reporters: [
+            { type: 'html', subdir: 'report-html' },
+            { type: 'cobertura', subdir: '.', file: 'cobertura.xml' },
+            { type: 'lcovonly', subdir: '.', file: 'coverage.lcov' },
+            { type: 'text-summary', subdir: '.', file: 'text-summary.txt' },
+        ]
     },
     junitReporter: {
       outputDir: '../test-reports/app'
     },
     reporters: config.angularCli && config.angularCli.codeCoverage
-      ? ['progress', 'junit', 'coverage-istanbul']
-      : ['progress', 'junit', 'kjhtml'],
+    ? ["progress", "coverage", "junit"]
+    : ["progress", "kjhtml", "junit"],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
