@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { DateAdapter, MAT_DATE_LOCALE, MAT_DATE_FORMATS } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -13,8 +14,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions, MatFormField } from '@angular/material/form-field';
+import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions } from '@angular/material/form-field';
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatCheckboxModule, MAT_CHECKBOX_DEFAULT_OPTIONS } from '@angular/material/checkbox';
+import { MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 
 import { SlbNavigationFrameworkModule } from '@slb-dls/angular-material/navigation-framework';
 import { SlbSharedModule } from '@slb-dls/angular-material/shared';
@@ -24,6 +27,7 @@ import { SlbLogoutModule } from '@slb-dls/angular-material/logout';
 import { SlbPopoverModule } from '@slb-dls/angular-material/popover';
 import { SlbButtonModule } from '@slb-dls/angular-material/button';
 import { SlbBreadcrumbsModule } from '@slb-dls/angular-material/breadcrumbs';
+import { SlbFormFieldModule } from '@slb-dls/angular-material/form-field';
 import { SLB_MOMENT_DATE_FORMATS } from '@slb-dls/angular-material/date-and-time-pickers';
 import { SLB_THEMING_OPTIONS } from '@slb-dls/angular-material/core';
 
@@ -33,11 +37,13 @@ import { HomeComponent } from './home/home.component';
 import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { themeConfig } from '../themes/theme.config';
-import { SlbFormFieldModule } from '@slb-dls/angular-material/form-field';
-import { MatInputModule } from '@angular/material/input';
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: 'outline',
+};
+
+const defaultColor = {
+  color: 'primary',
 };
 
 @NgModule({
@@ -65,6 +71,8 @@ const appearance: MatFormFieldDefaultOptions = {
     MatIconModule,
     MatMenuModule,
     MatDialogModule,
+    MatCheckboxModule,
+    MatRadioModule,
     MatSlideToggleModule,
 
     SlbSharedModule,
@@ -78,11 +86,13 @@ const appearance: MatFormFieldDefaultOptions = {
     SlbLogoutModule
   ],
   providers: [
+    { provide: SLB_THEMING_OPTIONS, useValue: themeConfig },
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: appearance },
+    { provide: MAT_CHECKBOX_DEFAULT_OPTIONS, useValue: defaultColor },
+    { provide: MAT_RADIO_DEFAULT_OPTIONS, useValue: defaultColor },
     { provide: MAT_DATE_FORMATS, useValue: SLB_MOMENT_DATE_FORMATS },
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS] },
     { provide: MessageService, useClass: MessageService },
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: appearance },
-    { provide: SLB_THEMING_OPTIONS, useValue: themeConfig },
   ],
   bootstrap: [AppComponent]
 })
