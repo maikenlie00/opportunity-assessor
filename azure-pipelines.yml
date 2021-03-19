@@ -26,6 +26,13 @@ steps:
     verbose: false
     customCommand: 'run build'
 
+- task: Npm@1
+  displayName: 'Test'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'test'
+
 - task: CopyFiles@2
   displayName: 'Prepare app artifacts'
   inputs:
