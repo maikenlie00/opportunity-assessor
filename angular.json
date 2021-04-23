@@ -29,7 +29,7 @@
               {
                 "glob": "**/*",
                 "ignore": [
-                  "styles"
+                  "styles/**/*"
                 ],
                 "input": "./node_modules/@slb-dls/angular-material/assets",
                 "output": "assets"
@@ -39,22 +39,22 @@
               "src/styles.scss",
               {
                 "input": "./node_modules/@slb-dls/angular-material/assets/styles/dls-mat-light-theme.css",
-                "bundleName": "assets/styles/dls-mat-light-theme",
+                "bundleName": "dls-mat-light-theme",
                 "inject": false
               },
               {
                 "input": "./node_modules/@slb-dls/angular-material/assets/styles/dls-mat-dark-theme.css",
-                "bundleName": "assets/styles/dls-mat-dark-theme",
+                "bundleName": "dls-mat-dark-theme",
                 "inject": false
               },
               {
                 "input": "src/themes/light/theme.scss",
-                "bundleName": "assets/styles/app-light-theme",
+                "bundleName": "app-light-theme",
                 "inject": false
               },
               {
                 "input": "src/themes/dark/theme.scss",
-                "bundleName": "assets/styles/app-dark-theme",
+                "bundleName": "app-dark-theme",
                 "inject": false
               }
             ],
