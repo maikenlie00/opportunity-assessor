@@ -28,8 +28,7 @@ import { SlbPopoverModule } from '@slb-dls/angular-material/popover';
 import { SlbButtonModule } from '@slb-dls/angular-material/button';
 import { SlbBreadcrumbsModule } from '@slb-dls/angular-material/breadcrumbs';
 import { SlbFormFieldModule } from '@slb-dls/angular-material/form-field';
-import { SLB_MOMENT_DATE_FORMATS } from '@slb-dls/angular-material/date-and-time-pickers';
-import { SLB_THEMING_OPTIONS } from '@slb-dls/angular-material/core';
+import { SLB_MOMENT_DATE_FORMATS, SLB_THEMING_OPTIONS } from '@slb-dls/angular-material/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

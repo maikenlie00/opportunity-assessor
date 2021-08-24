@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @mixin theme-switcher($theme, $config) {
     $primary: map-get($theme, primary);
 
@@ -7,11 +8,11 @@
 
     .app-theme-switcher {
         .app-content {
-            color: mat-color($primary);
+            color: mat.get-color-from-palette($primary);
             font: {
-                family: mat-font-family($config, body-1);
-                size: mat-font-size($config, body-1);
-                weight: mat-font-weight($config, body-1);
+                family: mat.font-family($config, body-1);
+                size: mat.font-size($config, body-1);
+                weight: mat.font-weight($config, body-1);
             }
         }
     }
