@@ -20,7 +20,7 @@
 
   <slb-framework-page-header
     *ngIf="showHeader"
-    displayBackButton="true"
+    [showBackButton]="true"
     [pageTitle]="pageTitle"
     [items]="secondaryLinks"
   >
@@ -31,12 +31,14 @@
 
 <ng-template #toolbar>
   <!-- * * * The content below is only a placeholder and can be replaced * * * -->
-    <button slb-icon-button title="Help">
+    <button slb-icon-button matTooltip="Help">
       <mat-icon svgIcon="help"></mat-icon>
     </button>
-    <slb-notifications-panel [capacity]="notificationCount" [notificationItems]="notificationItems"
-      [viewAllButtonVisible]="true">
-    </slb-notifications-panel>
+    <slb-notifications-panel 
+      [capacity]="notificationCount" 
+      [notificationItems]="notificationItems"
+      [viewAllButtonVisible]="true"
+    ></slb-notifications-panel>
     <slb-logout [userName]="'John Doe'">
     </slb-logout>
   <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
@@ -45,16 +47,16 @@
 <ng-template #sidenav>
   <mat-nav-list class="app-sidenav">
     <!-- * * * The content below is only a placeholder and can be replaced * * * -->
-    <a class="dls-navigation-item" title="Home" [routerLink]="['home']">
+    <a class="dls-navigation-item" matTooltip="Home" [routerLink]="['home']">
       <mat-icon svgIcon="home"></mat-icon>
     </a>
-    <a class="dls-navigation-item" title="Notifications" [routerLink]="['notifications']">
+    <a class="dls-navigation-item" matTooltip="Notifications" [routerLink]="['notifications']">
         <mat-icon svgIcon="layers"></mat-icon>
     </a>
-    <span class="dls-navigation-item" title="More items">
+    <span class="dls-navigation-item" matTooltip="More items">
       <mat-icon svgIcon="more"></mat-icon>
     </span>
-    <a class="dls-navigation-item" title="Themes" [routerLink]="['themes']">
+    <a class="dls-navigation-item" matTooltip="Themes" [routerLink]="['themes']">
       <mat-icon svgIcon="color-picker"></mat-icon>
     </a>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
@@ -62,11 +64,11 @@
 </ng-template>
 
 <mat-menu #menu="matMenu">
-  <a mat-menu-item title="Home" [routerLink]="['home']">
+  <a mat-menu-item matTooltip="Home" [routerLink]="['home']">
     <mat-icon svgIcon="home"></mat-icon>
     <span>Home</span>
   </a>
-  <a mat-menu-item title="Notifications" [routerLink]="['notifications']">
+  <a mat-menu-item matTooltip="Notifications" [routerLink]="['notifications']">
       <mat-icon svgIcon="layers"></mat-icon>
       <span>Notifications</span>
     </a>
@@ -74,7 +76,7 @@
     <mat-icon svgIcon="more"></mat-icon>
     <span>More items</span>
   </button>
-  <a mat-menu-item title="Themes" [routerLink]="['themes']">
+  <a mat-menu-item matTooltip="Themes" [routerLink]="['themes']">
     <mat-icon svgIcon="color-picker"></mat-icon>
     <span>Themes</span>
   </a>
