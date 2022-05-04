@@ -14,19 +14,19 @@ import { SlbNotificationItem, } from '@slb-dls/angular-material/notifications-pa
     encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnDestroy {
-    notificationCount: 10;
+    notificationCount: number =  10;
     notificationItems: SlbNotificationItem[] = [];
 
     showHeader: boolean = true;
     pageTitle: string = '';
-    secondaryLinks: LinkItem[];
+    secondaryLinks: LinkItem[] = [];
 
     private routerSubscription = Subscription.EMPTY;
 
     constructor(
-        private router: Router,
-        private matIconRegistry: MatIconRegistry,
-        private domSanitizer: DomSanitizer
+        router: Router,
+        matIconRegistry: MatIconRegistry,
+        domSanitizer: DomSanitizer
     ) {
         matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg-symbols.svg'));
 
@@ -41,7 +41,7 @@ export class AppComponent implements OnDestroy {
     }
 
     private onRouteChange(event: RoutesRecognized): void {
-        const data = event.state.root.firstChild.data;
+        const data: any = event.state.root.firstChild?.data;
         this.showHeader = isDefined(data.showHeader) ? data.showHeader : true;
         this.pageTitle = data.title;
         this.secondaryLinks = data.links;
