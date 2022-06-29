@@ -1,10 +1,10 @@
-import { Component, } from '@angular/core';
+import { Component } from '@angular/core';
 import { MessageService, SlbSeverity, SlbMessageTarget } from '@slb-dls/angular-material/notification';
 
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
-  styleUrls: ['./notifications.component.scss']
+  styleUrls: ['./notifications.component.scss'],
 })
 export class NotificationsComponent {
 

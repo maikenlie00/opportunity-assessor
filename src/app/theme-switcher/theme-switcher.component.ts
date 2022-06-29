@@ -8,9 +8,9 @@ import { Themes } from '../../themes/theme.config';
   templateUrl: './theme-switcher.component.html',
   styleUrls: ['./theme-switcher.component.scss'],
   host: {
-    'class': 'app-theme-switcher'
+    'class': 'app-theme-switcher',
   },
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class ThemeSwitcherComponent {
 

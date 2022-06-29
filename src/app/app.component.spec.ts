@@ -44,10 +44,10 @@ describe('AppComponent', () => {
         SlbNotificationsPanelModule,
         SlbNavigationFrameworkModule,
         SlbBreadcrumbsModule,
-        SlbLogoutModule
+        SlbLogoutModule,
       ],
       declarations: [
-        AppComponent
+        AppComponent,
       ],
       providers: [MessageService],
       schemas: [NO_ERRORS_SCHEMA],

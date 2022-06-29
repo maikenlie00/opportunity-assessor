@@ -126,7 +126,9 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "ignore": ["styles"],
+                "ignore": [
+                  "styles"
+                ],
                 "input": "./node_modules/@slb-dls/angular-material/assets",
                 "output": "assets"
               }
@@ -149,6 +151,15 @@
             "production": {
               "devServerTarget": "dls-boilerplate-material:serve:production"
             }
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
