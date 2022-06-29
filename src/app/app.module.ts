@@ -51,7 +51,7 @@ const defaultColor = {
     AppComponent,
     HomeComponent,
     ThemeSwitcherComponent,
-    NotificationsComponent
+    NotificationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,7 +84,7 @@ const defaultColor = {
     SlbNotificationsPanelModule,
     SlbNavigationFrameworkModule,
     SlbBreadcrumbsModule,
-    SlbLogoutModule
+    SlbLogoutModule,
   ],
   providers: [
     { provide: SLB_THEMING_OPTIONS, useValue: themeConfig },
@@ -95,6 +95,6 @@ const defaultColor = {
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS] },
     { provide: MessageService, useClass: MessageService },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -9,21 +9,21 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: '/home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'home',
     component: HomeComponent,
     data: {
       title: 'Home',
-    }
+    },
   },
   {
     path: 'notifications',
     component: NotificationsComponent,
     data: {
       title: 'Build-In Notifications',
-    }
+    },
   },
   {
     path: 'themes',
@@ -31,12 +31,12 @@ const routes: Routes = [
     data: {
       title: 'Theme Switching',
       showHeader: false,
-    }
+    },
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

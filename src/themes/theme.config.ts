@@ -10,11 +10,11 @@ export const themeConfig: SlbThemingOptions = {
     classMap: new Map<string, string[]>([
         [
             Themes.Light,
-            [ 'material-theme-light' ]
+            [ 'material-theme-light' ],
         ],
         [
             Themes.Dark,
-            [ 'material-theme-dark' ]
+            [ 'material-theme-dark' ],
         ],
     ]),
     stylesheetMap: new Map<string, string[]>([
@@ -23,14 +23,14 @@ export const themeConfig: SlbThemingOptions = {
             [
                 'dls-mat-light-theme.css',
                 'app-light-theme.css',
-            ]
+            ],
         ],
         [
             Themes.Dark,
             [
                 'dls-mat-dark-theme.css',
                 'app-dark-theme.css',
-            ]
+            ],
         ],
-    ])
+    ]),
 };

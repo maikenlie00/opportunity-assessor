@@ -29,7 +29,7 @@ describe('ThemeSwitcherComponent', () => {
         SlbButtonModule,
       ],
       schemas: [NO_ERRORS_SCHEMA],
-      declarations: [ThemeSwitcherComponent]
+      declarations: [ThemeSwitcherComponent],
     })
       .compileComponents();
   });

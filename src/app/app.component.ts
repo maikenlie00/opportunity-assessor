@@ -5,7 +5,7 @@ import { Router, RoutesRecognized } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { LinkItem, isDefined } from '@slb-dls/angular-material/shared';
-import { SlbNotificationItem, } from '@slb-dls/angular-material/notifications-panel';
+import { SlbNotificationItem } from '@slb-dls/angular-material/notifications-panel';
 
 @Component({
     selector: 'app-root',
