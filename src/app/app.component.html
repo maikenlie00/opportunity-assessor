@@ -47,16 +47,16 @@
 <ng-template #sidenav>
   <mat-nav-list class="app-sidenav">
     <!-- * * * The content below is only a placeholder and can be replaced * * * -->
-    <a class="dls-navigation-item" matTooltip="Home" [routerLink]="['home']">
+    <a class="dls-navigation-item" matTooltip="Home" [matTooltipPosition]="'right'" [routerLink]="['home']">
       <mat-icon svgIcon="home"></mat-icon>
     </a>
-    <a class="dls-navigation-item" matTooltip="Notifications" [routerLink]="['notifications']">
+    <a class="dls-navigation-item" matTooltip="Notifications"  [matTooltipPosition]="'right'" [routerLink]="['notifications']">
         <mat-icon svgIcon="layers"></mat-icon>
     </a>
-    <span class="dls-navigation-item" matTooltip="More items">
+    <span class="dls-navigation-item" matTooltip="More items"  [matTooltipPosition]="'right'">
       <mat-icon svgIcon="more"></mat-icon>
     </span>
-    <a class="dls-navigation-item" matTooltip="Themes" [routerLink]="['themes']">
+    <a class="dls-navigation-item" matTooltip="Themes"  [matTooltipPosition]="'right'" [routerLink]="['themes']">
       <mat-icon svgIcon="color-picker"></mat-icon>
     </a>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
