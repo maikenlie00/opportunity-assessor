@@ -1,8 +1,8 @@
-<slb-navigation-framework 
-  [applicationLogo]="'assets/logos/delfi.png'"
-  [applicationName]="'My app'"
+<slb-navigation-framework
+  [applicationLogo]="'assets/logos/delfi-text.png'"
+  [applicationName]="'Opportunity Assessor'"
   [menu]="menu"
-  [hasSidenav]="true" 
+  [hasSidenav]="true"
   [notifications]="true"
   [pageTitle]="pageTitle"
 >
@@ -31,32 +31,50 @@
 
 <ng-template #toolbar>
   <!-- * * * The content below is only a placeholder and can be replaced * * * -->
-    <button slb-icon-button matTooltip="Help">
-      <mat-icon svgIcon="help"></mat-icon>
-    </button>
-    <slb-notifications-panel 
-      [capacity]="notificationCount" 
-      [notificationItems]="notificationItems"
-      [viewAllButtonVisible]="true"
-    ></slb-notifications-panel>
-    <slb-logout [userName]="'John Doe'">
-    </slb-logout>
+  <button slb-icon-button matTooltip="Help">
+    <mat-icon svgIcon="help"></mat-icon>
+  </button>
+  <slb-notifications-panel
+    [capacity]="notificationCount"
+    [notificationItems]="notificationItems"
+    [viewAllButtonVisible]="true"
+  ></slb-notifications-panel>
+  <slb-logout [userName]="'John Doe'"> </slb-logout>
   <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 </ng-template>
 
 <ng-template #sidenav>
   <mat-nav-list class="app-sidenav">
     <!-- * * * The content below is only a placeholder and can be replaced * * * -->
-    <a class="dls-navigation-item" matTooltip="Home" [matTooltipPosition]="'right'" [routerLink]="['home']">
+    <a
+      class="dls-navigation-item"
+      matTooltip="Home"
+      [matTooltipPosition]="'right'"
+      [routerLink]="['home']"
+    >
       <mat-icon svgIcon="home"></mat-icon>
     </a>
-    <a class="dls-navigation-item" matTooltip="Notifications"  [matTooltipPosition]="'right'" [routerLink]="['notifications']">
-        <mat-icon svgIcon="layers"></mat-icon>
+    <a
+      class="dls-navigation-item"
+      matTooltip="Notifications"
+      [matTooltipPosition]="'right'"
+      [routerLink]="['notifications']"
+    >
+      <mat-icon svgIcon="layers"></mat-icon>
     </a>
-    <span class="dls-navigation-item" matTooltip="More items"  [matTooltipPosition]="'right'">
+    <span
+      class="dls-navigation-item"
+      matTooltip="More items"
+      [matTooltipPosition]="'right'"
+    >
       <mat-icon svgIcon="more"></mat-icon>
     </span>
-    <a class="dls-navigation-item" matTooltip="Themes"  [matTooltipPosition]="'right'" [routerLink]="['themes']">
+    <a
+      class="dls-navigation-item"
+      matTooltip="Themes"
+      [matTooltipPosition]="'right'"
+      [routerLink]="['themes']"
+    >
       <mat-icon svgIcon="color-picker"></mat-icon>
     </a>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
@@ -69,9 +87,9 @@
     <span>Home</span>
   </a>
   <a mat-menu-item matTooltip="Notifications" [routerLink]="['notifications']">
-      <mat-icon svgIcon="layers"></mat-icon>
-      <span>Notifications</span>
-    </a>
+    <mat-icon svgIcon="layers"></mat-icon>
+    <span>Notifications</span>
+  </a>
   <button mat-menu-item disabled>
     <mat-icon svgIcon="more"></mat-icon>
     <span>More items</span>

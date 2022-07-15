@@ -1,0 +1,134 @@
+body {
+  background-color: #f1f4f9;
+}
+
+.flexbox-container-yes {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 100px;
+}
+
+.flexbox-item {
+  margin: 30px;
+  padding: 20px 10px;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: move;
+  font-size: 14px;
+}
+
+.mainlist {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.keeplist {
+  display: flex;
+  background-color: lightgray;
+  border: solid 1px #ccc;
+  background-color: white;
+  overflow: hidden;
+  display: block;
+  border-radius: 4px;
+  width: 300px;
+  height: 1105px;
+}
+
+.showncards {
+  cursor: pointer;
+  border: RGBA(46, 49, 49, 0.7) solid 1px;
+  border-radius: 2px;
+  border-color: black;
+  min-width: 350px;
+  max-width: 350px;
+  flex-direction: column;
+}
+
+.showncards:hover {
+  background-color: lightgray;
+}
+
+.hiddencards {
+  cursor: pointer;
+  box-shadow: none;
+}
+h3 {
+  display: flex;
+  writing-mode: vertical-lr;
+  color: grey;
+  align-self: center;
+  transform: translateX(-20%);
+}
+
+/*   margin: 1em;
+      cursor: pointer;
+      text-align: center;
+      background-color: lightgray;
+      width: 2em; */
+
+/* .list-container {
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 2em;
+    */
+
+/* background-color: white;
+      width: 80%;
+      height: 100%;
+      column-count: 3; */
+
+/*  mat-card {
+      display:flex;
+      flex-wrap: wrap;
+    } */
+
+/*  .mainlist {
+      display: grid;
+      justify-content: center;
+      cursor: pointer;
+    } */
+
+h2 {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(207, 201, 201);
+  font-weight: 400;
+  font-size: medium;
+}
+
+.expcoll {
+  display: flex;
+  width: 30px;
+  height: 1105px;
+}
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+  border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+a {
+  text-decoration: none;
+  color: dodgerblue;
+}

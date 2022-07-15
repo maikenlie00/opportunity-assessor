@@ -1,3 +1,65 @@
 <div class="app-content">
-    <p>Content goes here</p>
+  <body>
+    <div class="flexbox-container-yes">
+      <div
+        class="flexbox-item mainlist"
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todos"
+        [cdkDropListConnectedTo]="doneList"
+        (cdkDropListDropped)="onDrop($event)"
+      >
+        <mat-card
+          class="flexbox-item showncards"
+          *ngFor="let todo of todos"
+          cdkDrag
+        >
+          <mat-card-actions>
+            <button class="collapse" mat-button (click)="todo.collapsed = true">
+              collapse
+            </button>
+            <button
+              class="collapse"
+              mat-button
+              (click)="todo.collapsed = false"
+            >
+              uncollapse
+            </button>
+          </mat-card-actions>
+          <mat-card-header>
+            <mat-card-title>{{ todo.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content *ngIf="!todo.collapsed">
+            {{ todo.content }}
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <button class="expcoll" (click)="toggleCollapse()">
+        <h3>Expand / Collapse</h3>
+      </button>
+      <!--   <div class="hello" *ngIf="!isCollapsed">   -->
+      <div
+        class="keeplist"
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="completed"
+        [cdkDropListConnectedTo]="[todoList]"
+        (cdkDropListDropped)="onDrop($event)"
+      >
+        <h2>Unactive cards</h2>
+
+        <mat-card
+          class="flexbox-item hiddencards"
+          *ngFor="let complete of completed"
+          cdkDrag
+          [cdkDragDisabled]="complete.disabled"
+        >
+          <mat-card-header>
+            <mat-card-title> {{ this.complete.title }}</mat-card-title>
+            <mat-card-subtitle></mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+  </body>
 </div>
