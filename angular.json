@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "testProject": {
+    "dls-boilerplate-material": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,69 +17,101 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test-project",
+            "outputPath": "dist/dls-boilerplate-material",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "ignore": [
+                  "styles/**/*"
+                ],
+                "input": "./node_modules/@slb-dls/angular-material/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              {
+                "input": "./node_modules/@slb-dls/angular-material/assets/styles/dls-mat-light-theme.css",
+                "bundleName": "dls-mat-light-theme",
+                "inject": false
+              },
+              {
+                "input": "./node_modules/@slb-dls/angular-material/assets/styles/dls-mat-dark-theme.css",
+                "bundleName": "dls-mat-dark-theme",
+                "inject": false
+              },
+              {
+                "input": "src/themes/light/theme.scss",
+                "bundleName": "app-light-theme",
+                "inject": false
+              },
+              {
+                "input": "src/themes/dark/theme.scss",
+                "bundleName": "app-dark-theme",
+                "inject": false
+              }
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "3mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "dls-boilerplate-material:build",
+            "port": 4100
+          },
           "configurations": {
             "production": {
-              "browserTarget": "testProject:build:production"
-            },
-            "development": {
-              "browserTarget": "testProject:build:development"
+              "browserTarget": "dls-boilerplate-material:build:production"
             }
-          },
-          "defaultConfiguration": "development"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "testProject:build"
+            "browserTarget": "dls-boilerplate-material:build"
           }
         },
         "test": {
@@ -87,15 +123,47 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "ignore": [
+                  "styles"
+                ],
+                "input": "./node_modules/@slb-dls/angular-material/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@slb-dls/angular-material/assets/styles/dls-mat-light-theme.css",
+              "src/themes/light/theme.scss",
+              "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "dls-boilerplate-material:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dls-boilerplate-material:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
     }
-  }
+  },
+  "defaultProject": "dls-boilerplate-material"
 }
