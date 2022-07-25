@@ -13,7 +13,7 @@ export class ContributorsComponent implements OnInit {
   }
   title= "Contributors";
   subtitle = "Created by";
-  content = "innhold";
+  content = "../../assets/contributors.png";
 
 
   boxContent = [this.title, this.subtitle, this.content];

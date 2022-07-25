@@ -14,7 +14,7 @@ export class PropertiesComponent implements OnInit {
 
   title= "Properties";
   subtitle = "Geologist";
-  content = "innhold";
+  content = "../../assets/properties.png";
 
 
   boxContent = [this.title, this.subtitle, this.content];

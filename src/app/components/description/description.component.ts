@@ -13,7 +13,7 @@ export class DescriptionComponent implements OnInit {
   }
   title= "Description Summary";
   subtitle = "undertittel";
-  content = "innhold";
+  content = "../../assets/descriptionsummary.png";
 
 
   boxContent = [this.title, this.subtitle, this.content];

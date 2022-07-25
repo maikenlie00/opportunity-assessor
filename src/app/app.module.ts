@@ -69,6 +69,7 @@ import { DescriptionComponent } from "./components/description/description.compo
 import { PropertiesComponent } from "./components/properties/properties.component";
 import { ResourcesComponent } from "./components/resources/resources.component";
 import { RisksComponent } from "./components/risks/risks.component";
+import { StartComponent } from './start/start.component';
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: "outline",
@@ -90,6 +91,7 @@ const defaultColor = {
     PropertiesComponent,
     ResourcesComponent,
     RisksComponent,
+    StartComponent,
   ],
 
   imports: [

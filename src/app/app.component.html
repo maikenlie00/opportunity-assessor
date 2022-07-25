@@ -10,42 +10,51 @@
     <ng-content *ngTemplateOutlet="toolbar"></ng-content>
   </slb-framework-toolbar>
 
-  <slb-framework-sidenav>
-    <ng-content *ngTemplateOutlet="sidenav"></ng-content>
-  </slb-framework-sidenav>
+   <slb-framework-sidenav>
+     <ng-content *ngTemplateOutlet="sidenav"></ng-content> 
+  </slb-framework-sidenav> 
 
   <slb-framework-content>
     <ng-content *ngTemplateOutlet="content"></ng-content>
   </slb-framework-content>
 
-  <slb-framework-page-header
+  <slb-framework-page-header class="header2"
     *ngIf="showHeader"
-    [showBackButton]="true"
     [pageTitle]="pageTitle"
     [items]="secondaryLinks"
   >
-    <!-- * * * The content below is only a placeholder and can be replaced * * * -->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <!-- <div class="prospect-header-left">
+    <div class="prospect-elements">
+    <span class="mat-tool-trip-trigger">
+      <mat-icon role="img" svgIcon="geox-prospectanalysis"></mat-icon>
+      Cod Low (#5369)</span>
+    <p class="content">
+       <mat-icon role="img" svgIcon="geox-prospectanalysis"> Cod analysis</mat-icon> 
+      Cod analysis<span class="id-label">(#5370)</span>
+    </p>
+  </div>
+  </div> Prøver å lage overskriften sånn som de har hatt den, men vanskelig-->
   </slb-framework-page-header>
 </slb-navigation-framework>
 
 <ng-template #toolbar>
   <!-- * * * The content below is only a placeholder and can be replaced * * * -->
+  <section class="SIS" >
+    <p  _ngcontent-qvy-c249 class="dp">
+      <span class= "textDP"> Data Partition: slb</span>
+      <span class="dp-accountName _ngcontent-qvy-c249">SIS Internal HQ</span>
+    </p>
+  </section>
   <button slb-icon-button matTooltip="Help">
     <mat-icon svgIcon="help"></mat-icon>
   </button>
-  <slb-notifications-panel
-    [capacity]="notificationCount"
-    [notificationItems]="notificationItems"
-    [viewAllButtonVisible]="true"
-  ></slb-notifications-panel>
-  <slb-logout [userName]="'John Doe'"> </slb-logout>
+  <slb-logout [userName]="''"> </slb-logout>
   <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 </ng-template>
 
+
 <ng-template #sidenav>
   <mat-nav-list class="app-sidenav">
-    <!-- * * * The content below is only a placeholder and can be replaced * * * -->
     <a
       class="dls-navigation-item"
       matTooltip="Home"
@@ -53,33 +62,26 @@
       [routerLink]="['home']"
     >
       <mat-icon svgIcon="home"></mat-icon>
+    </a> 
+    <a
+      class="dls-navigation-item"
+      matTooltip="Settings"
+      [matTooltipPosition]="'right'"
+      [routerLink]="['notifications']" 
+    >
+      <mat-icon svgIcon="settings"></mat-icon>
     </a>
     <a
       class="dls-navigation-item"
-      matTooltip="Notifications"
+      matTooltip="Data management"
       [matTooltipPosition]="'right'"
-      [routerLink]="['notifications']"
+      [routerLink]="['']"
     >
-      <mat-icon svgIcon="layers"></mat-icon>
-    </a>
-    <span
-      class="dls-navigation-item"
-      matTooltip="More items"
-      [matTooltipPosition]="'right'"
-    >
-      <mat-icon svgIcon="more"></mat-icon>
-    </span>
-    <a
-      class="dls-navigation-item"
-      matTooltip="Themes"
-      [matTooltipPosition]="'right'"
-      [routerLink]="['themes']"
-    >
-      <mat-icon svgIcon="color-picker"></mat-icon>
-    </a>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+      <mat-icon svgIcon="block-diagram"></mat-icon>
+  </a>
+    
   </mat-nav-list>
-</ng-template>
+</ng-template> 
 
 <mat-menu #menu="matMenu">
   <a mat-menu-item matTooltip="Home" [routerLink]="['home']">
@@ -87,21 +89,17 @@
     <span>Home</span>
   </a>
   <a mat-menu-item matTooltip="Notifications" [routerLink]="['notifications']">
-    <mat-icon svgIcon="layers"></mat-icon>
-    <span>Notifications</span>
+    <mat-icon svgIcon="settings"></mat-icon>
+    <span>Settings</span>
   </a>
-  <button mat-menu-item disabled>
-    <mat-icon svgIcon="more"></mat-icon>
-    <span>More items</span>
-  </button>
   <a mat-menu-item matTooltip="Themes" [routerLink]="['themes']">
-    <mat-icon svgIcon="color-picker"></mat-icon>
-    <span>Themes</span>
+    <mat-icon svgIcon="block-diagram"></mat-icon>
+    <span>Datamanagement</span>
   </a>
 </mat-menu>
 
 <ng-template #content>
   <!-- * * * The content below is only a placeholder and can be replaced * * * -->
-  <router-outlet></router-outlet>
-  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <router-outlet>
+  </router-outlet>
 </ng-template>

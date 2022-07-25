@@ -14,7 +14,7 @@ export class ResourcesComponent implements OnInit {
 
   title= "Resources";
   subtitle = "undertittel";
-  content = "innhold";
+  content = "../../assets/resources.png";
 
 
   boxContent = [this.title, this.subtitle, this.content];

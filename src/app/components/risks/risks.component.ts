@@ -12,7 +12,7 @@ export class RisksComponent implements OnInit {
 
   title = "Risks";
   subtitle = "undertittel";
-  content = "innhold";
+  content = "../../assets/risk.png";
 
   boxContent = [this.title, this.subtitle, this.content];
 }

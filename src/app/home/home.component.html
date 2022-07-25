@@ -1,65 +1,81 @@
 <div class="app-content">
-  <body>
-    <div class="flexbox-container-yes">
-      <div
-        class="flexbox-item mainlist"
-        cdkDropList
-        #todoList="cdkDropList"
-        [cdkDropListData]="todos"
-        [cdkDropListConnectedTo]="doneList"
-        (cdkDropListDropped)="onDrop($event)"
-      >
-        <mat-card
-          class="flexbox-item showncards"
-          *ngFor="let todo of todos"
-          cdkDrag
-        >
-          <mat-card-actions>
-            <button class="collapse" mat-button (click)="todo.collapsed = true">
-              collapse
-            </button>
-            <button
-              class="collapse"
-              mat-button
-              (click)="todo.collapsed = false"
-            >
-              uncollapse
-            </button>
-          </mat-card-actions>
-          <mat-card-header>
-            <mat-card-title>{{ todo.title }}</mat-card-title>
-          </mat-card-header>
-          <mat-card-content *ngIf="!todo.collapsed">
-            {{ todo.content }}
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <button class="expcoll" (click)="toggleCollapse()">
-        <h3>Expand / Collapse</h3>
-      </button>
-      <!--   <div class="hello" *ngIf="!isCollapsed">   -->
-      <div
-        class="keeplist"
-        cdkDropList
-        #doneList="cdkDropList"
-        [cdkDropListData]="completed"
-        [cdkDropListConnectedTo]="[todoList]"
-        (cdkDropListDropped)="onDrop($event)"
-      >
-        <h2>Unactive cards</h2>
 
-        <mat-card
-          class="flexbox-item hiddencards"
-          *ngFor="let complete of completed"
-          cdkDrag
-          [cdkDragDisabled]="complete.disabled"
+  <!-- <div class="collapsed-analysis-label ng-star-inserted _ngcontent-qvy-c453">
+    <span _ngcontent-qvy-c453>All prospect analyses</span>
+  </div> Enten går det ann å lage den sidebaren her, eller så får vi lage helt ny navbar og sidebar komponenter tenker jeg! -->
+
+  <div _ngcontent-cod-c371 class="board-layout">
+
+    <body>
+      <div class="flexbox-container-yes">
+        <div
+          class="flexbox-item mainlist"
+          cdkDropList
+          #componentList="cdkDropList"
+          [cdkDropListData]="components"
+          [cdkDropListConnectedTo]="doneList"
+          (cdkDropListDropped)="onDrop($event)"
         >
-          <mat-card-header>
-            <mat-card-title> {{ this.complete.title }}</mat-card-title>
-            <mat-card-subtitle></mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
+          <mat-card
+            class="flexbox-item showncards"
+            *ngFor="let todo of components"
+            cdkDrag
+          >
+            <mat-card-actions>
+              <button class="collapse" mat-button (click)="todo.collapsed = true">
+                Collapse
+              </button>
+              <button
+                class="collapse"
+                mat-button
+                (click)="todo.collapsed = false"
+              >
+                Uncollapse
+              </button>
+              <button class="close" mat-button>X</button> <!-- Legge til variabel true/false? Må fikse onclick funskjonalitet (click)="onNoClick()" -->
+            </mat-card-actions>
+            <mat-card-header class="title">
+              <mat-card-title class="title">{{ todo.title }}</mat-card-title>
+            </mat-card-header>
+            <div class="imagec">
+            <mat-card-content *ngIf="!todo.collapsed" class="image-container">
+              <img class="image" src={{todo.content}} alt="image" />
+            </mat-card-content>
+          </div>
+          </mat-card>
+        </div>
+        <!-- <button title="toggle" type="button" class="dls-sidenav-toggle-button ng-tns-c203-0 ng-star-inserted close" ng-reflect-ng-class="[object Object]">
+          :: after
+        </button> -->
+
+
+        <!-- <button class="expcoll" (click)="toggleCollapse()">
+          <h3 class= "hiddenbutton">Show the removed items</h3>
+        </button>
+           <div class="hello" *ngIf="!isCollapsed"> --> 
+        <div
+          class="keeplist"
+          cdkDropList
+          #doneList="cdkDropList"
+          [cdkDropListData]="completed"
+          [cdkDropListConnectedTo]="[componentList]"
+          (cdkDropListDropped)="onDrop($event)"
+        >
+          <h2>Unactive cards</h2>
+  
+          <div
+            class="flexbox-item hiddencards"
+            *ngFor="let complete of completed"
+            cdkDrag
+            [cdkDragDisabled]="complete.disabled"
+          >
+            <mat-card-header>
+              <mat-card-title> {{ this.complete.title }}</mat-card-title>
+              <mat-card-subtitle></mat-card-subtitle>
+            </mat-card-header>
+          </div>
+        </div>
       </div>
-    </div>
-  </body>
+    </body>
+  </div>
 </div>
