@@ -10,6 +10,7 @@ import { SlbNavigationFrameworkModule } from "@slb-dls/angular-material/navigati
 import { SidebarComponent } from "../navandsidebar/sidebar/sidebar.component";
 import { NavbarComponent } from "../navandsidebar/navbar/navbar.component";
 
+
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -31,27 +32,56 @@ export class HomeComponent implements OnInit {
       title: this.comp1.title,
       content: this.comp1.content,
       collapsed: false,
+      cross: false,
     },
 
-    { title: this.comp2.title, content: this.comp2.content, collapsed: false },
+    { 
+      title: this.comp2.title, 
+      content: this.comp2.content, 
+      collapsed: false, 
+      cross: false
+    },
 
-    { title: this.comp3.title, content: this.comp3.content, collapsed: false },
+    { 
+      title: this.comp3.title, 
+      content: this.comp3.content, 
+      collapsed: false, 
+      cross: false },
 
-    { title: this.comp4.title, content: this.comp4.content, collapsed: false },
+    { 
+      title: this.comp4.title, 
+      content: this.comp4.content, 
+      collapsed: false, 
+      cross: false },
 
-    { title: this.comp5.title, content: this.comp5.content, collapsed: false },
+    { 
+      title: this.comp5.title, 
+      content: this.comp5.content, 
+      collapsed: false, 
+      cross: false},
 
-    { title: this.comp6.title, content: this.comp6.content, collapsed: false },
+    { 
+      title: this.comp6.title, 
+      content: this.comp6.content, 
+      collapsed: false, 
+      cross: false },
   ];
 
   isCollapsed: boolean = true;
   doneList = []; // Hva gjør egentlig denne?, skjønner at den brukes
 
+
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  completed = [{ title: "", disabled: true }];
+  completed = [
+    { 
+      title: "", 
+      content: "", 
+      collapsed: false, 
+      cross: false
+    }];
 
   firstLetter(variabel: string) {
     let firstletter = variabel.charAt(0);
@@ -62,15 +92,7 @@ export class HomeComponent implements OnInit {
 
   handleClose() {}
 
-  /*   onDrop(event: CdkDragDrop<any[]>) {
-    let index: any;
-    index = this.todos[event.currentIndex];
-    console.log(this.todos);
 
-    let oldtarget = this.todos[event.previousIndex];
-    this.todos[event.previousIndex] = this.todos[event.currentIndex];
-    this.todos[event.currentIndex] = oldtarget;
-  } */
 
   onDrop(event: CdkDragDrop<any[]>) {
     console.log("previosIndex = ", event.previousIndex);
@@ -95,13 +117,15 @@ export class HomeComponent implements OnInit {
         event.currentIndex
       );
     }
-    // Litt dårlig kode å ha en sånn betingelse, men ja vi kan se på en annen løsning.
+    // Litt dårlig kode? å ha en sånn betingelse, men ja vi kan se på en annen løsning!
   }
-  /*   onNoClick(event: any) {
-    /*let el = event.currentIndex;
-    console.log(event.contianer.data);
-    this.completed.push(event.container.data);
-    delete this.components[el]; 
-    viL AT NÅR MAN TRYKKER PÅ X så skal komponentet automatisk bli lagt til i "completed" listen og fjernet fra comonentlisten!
-  } */
+onNoClick() {
+  this.components.forEach(element => {
+    if(element.cross == true) {
+      let strIndex= this.components.indexOf(element);
+      this.completed.push(element);
+      this.components.splice(strIndex, 1);
+  }
+  });
+  }
 }

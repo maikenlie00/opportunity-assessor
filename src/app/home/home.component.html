@@ -34,11 +34,10 @@
               >
                 Uncollapse
               </button>
-              <button class="close" mat-button>X</button>
-              <!-- Legge til variabel true/false? Må fikse onclick funskjonalitet (click)="onNoClick()" -->
+              <button class="close" mat-button (click)="todo.cross = true" (click)="onNoClick()">X</button> <!-- Legge til variabel true/false? Må fikse onclick funskjonalitet (click)="onNoClick()" -->
             </mat-card-actions>
             <mat-card-header class="title">
-              <mat-card-title class="title">{{ todo.title }}</mat-card-title>
+              <mat-card-title class="title">{{ todo?.title }}</mat-card-title>
             </mat-card-header>
             <div class="imagec">
               <mat-card-content *ngIf="!todo.collapsed" class="image-container">
@@ -47,7 +46,7 @@
             </div>
           </mat-card>
         </div>
-        <!-- <button title="toggle" type="button" class="dls-sidenav-toggle-button ng-tns-c203-0 ng-star-inserted close" ng-reflect-ng-class="[object Object]">
+        <!-- <button title="toggle" type="button" class="dlsx-sidenav-toggle-button ng-tns-c203-0 ng-star-inserted close" ng-reflect-ng-class="[object Object]">
           :: after
         </button> -->
 
@@ -69,7 +68,6 @@
             class="flexbox-item hiddencards"
             *ngFor="let complete of completed"
             cdkDrag
-            [cdkDragDisabled]="complete.disabled"
           >
             <mat-card-header>
               <mat-card-title> {{ this.complete.title }}</mat-card-title>
