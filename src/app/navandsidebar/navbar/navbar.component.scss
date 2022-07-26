@@ -1,0 +1,38 @@
+.mat-toolbar {
+    background-color: #fff;
+    color: grey;
+    height: 72px;
+    border-bottom: 1px solid #c7d0d8;
+    width: 100%;
+  }
+  .navbarcontent {
+    margin-left: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .icon {
+    display: flex;
+    margin-top: 3px;
+  }
+  
+  .number {
+    color: darkgrey;
+  }
+  .mat-button {
+    color: white;
+  }
+  .iconsnavbar {
+    width: 350px;
+  }
+  
+  mat-tab-group {
+    margin-left: 20%;
+  }
+  
+  mat-tab {
+    min-width: 4px;
+    size-adjust: 8px;
+  }
+  

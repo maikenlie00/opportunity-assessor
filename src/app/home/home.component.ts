@@ -7,6 +7,8 @@ import { PropertiesComponent } from "../components/properties/properties.compone
 import { ResourcesComponent } from "../components/resources/resources.component";
 import { RisksComponent } from "../components/risks/risks.component";
 import { SlbNavigationFrameworkModule } from "@slb-dls/angular-material/navigation-framework";
+import { SidebarComponent } from "../navandsidebar/sidebar/sidebar.component";
+import { NavbarComponent } from "../navandsidebar/navbar/navbar.component";
 
 @Component({
   selector: "app-home",
@@ -84,8 +86,8 @@ export class HomeComponent implements OnInit {
       this.components[event.previousIndex] =
         this.components[event.currentIndex];
       this.components[event.currentIndex] = oldtarget;
-    } else if (this.components.length > 1 || this.completed.length == 6) {
-      console.log("hei")
+    } else if (this.components.length > 1 || this.completed.length == 5) {
+      console.log("hei");
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
@@ -93,9 +95,9 @@ export class HomeComponent implements OnInit {
         event.currentIndex
       );
     }
-    // Litt dårlig kode å ha en sånn betingelse, men ja vi kan se på en annen løsning. 
+    // Litt dårlig kode å ha en sånn betingelse, men ja vi kan se på en annen løsning.
   }
-/*   onNoClick(event: any) {
+  /*   onNoClick(event: any) {
     /*let el = event.currentIndex;
     console.log(event.contianer.data);
     this.completed.push(event.container.data);

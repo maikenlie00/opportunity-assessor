@@ -1,0 +1,16 @@
+.sidebar {
+  position: fixed;
+  width: 50px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.781);
+  border-right: 1px solid #c7d0d8;
+}
+.mc {
+  writing-mode: vertical-lr;
+  color: grey;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-20%);
+  transform: translateX(100%);
+}

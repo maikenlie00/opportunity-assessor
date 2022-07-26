@@ -69,7 +69,10 @@ import { DescriptionComponent } from "./components/description/description.compo
 import { PropertiesComponent } from "./components/properties/properties.component";
 import { ResourcesComponent } from "./components/resources/resources.component";
 import { RisksComponent } from "./components/risks/risks.component";
-import { StartComponent } from './start/start.component';
+import { StartComponent } from "./start/start.component";
+import { NavbarComponent } from "./navandsidebar/navbar/navbar.component";
+import { SidebarComponent } from "./navandsidebar/sidebar/sidebar.component";
+import { MatTabsModule } from "@angular/material/tabs";
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: "outline",
@@ -92,6 +95,8 @@ const defaultColor = {
     ResourcesComponent,
     RisksComponent,
     StartComponent,
+    NavbarComponent,
+    SidebarComponent,
   ],
 
   imports: [
@@ -128,6 +133,7 @@ const defaultColor = {
     SlbNavigationFrameworkModule,
     SlbBreadcrumbsModule,
     SlbLogoutModule,
+    MatTabsModule,
   ],
   providers: [
     { provide: SLB_THEMING_OPTIONS, useValue: themeConfig },

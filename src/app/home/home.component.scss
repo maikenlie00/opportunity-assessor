@@ -4,8 +4,6 @@ body {
 
 .flexbox-container-yes {
   display: flex;
-  
-
 }
 
 .flexbox-item {
@@ -17,13 +15,11 @@ body {
   box-sizing: border-box;
   cursor: move;
   font-size: 14px;
-  
 }
 
 .mainlist {
   flex-wrap: wrap;
   justify-content: flex-start;
-
 }
 
 .keeplist {
@@ -46,7 +42,6 @@ body {
   min-width: 200px;
   max-width: 800px;
   flex-direction: column;
-  
 }
 
 .showncards:hover {
@@ -65,8 +60,8 @@ h3 {
   transform: translateX(-20%);
 }
 
-.image-c{
-  min-width:20px;
+.image-c {
+  min-width: 20px;
   max-width: 30px;
 }
 
@@ -110,7 +105,7 @@ h2 {
   display: flex;
   width: 30px;
   height: 1105px;
-} 
+}
 .cdk-drag-preview {
   box-sizing: border-box;
   border-radius: 4px;
@@ -141,27 +136,24 @@ a {
 
 .collapsed-analysis-label {
   flex: 1;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
 
   background-color: white;
   padding-right: 150px;
   width: 50%;
   box-sizing: border-box;
-  
-  
 }
 
 ._ngcontent-qvy-c453 {
-  
   transform-origin: center center;
   white-space: nowrap;
- padding: 12px;
-    padding-top: 12px;
-    padding-right: 12px;
-    padding-bottom: 12px;
-    padding-left: 12px; 
+  padding: 12px;
+  padding-top: 12px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
   transform: translate(-50%, -50%) rotate(-90deg);
   background-color: white;
   color: #272c39;
@@ -171,23 +163,20 @@ a {
   position: fixed;
 }
 
-.hiddenbutton{
+.hiddenbutton {
   transform-origin: center center;
   white-space: nowrap;
 }
 
 .close.mat-button {
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
   padding: 5px;
   line-height: 14px;
-  min-width: auto; 
-  
+  min-width: auto;
 }
 
-.title{
+.title {
   color: red;
 }
-
-

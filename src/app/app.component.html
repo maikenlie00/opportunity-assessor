@@ -10,20 +10,21 @@
     <ng-content *ngTemplateOutlet="toolbar"></ng-content>
   </slb-framework-toolbar>
 
-   <slb-framework-sidenav>
-     <ng-content *ngTemplateOutlet="sidenav"></ng-content> 
-  </slb-framework-sidenav> 
+  <slb-framework-sidenav>
+    <ng-content *ngTemplateOutlet="sidenav"></ng-content>
+  </slb-framework-sidenav>
 
   <slb-framework-content>
     <ng-content *ngTemplateOutlet="content"></ng-content>
   </slb-framework-content>
 
-  <slb-framework-page-header class="header2"
+  <slb-framework-page-header
+    class="header2"
     *ngIf="showHeader"
     [pageTitle]="pageTitle"
     [items]="secondaryLinks"
   >
-  <!-- <div class="prospect-header-left">
+    <!-- <div class="prospect-header-left">
     <div class="prospect-elements">
     <span class="mat-tool-trip-trigger">
       <mat-icon role="img" svgIcon="geox-prospectanalysis"></mat-icon>
@@ -39,9 +40,9 @@
 
 <ng-template #toolbar>
   <!-- * * * The content below is only a placeholder and can be replaced * * * -->
-  <section class="SIS" >
-    <p  _ngcontent-qvy-c249 class="dp">
-      <span class= "textDP"> Data Partition: slb</span>
+  <section class="SIS">
+    <p _ngcontent-qvy-c249 class="dp">
+      <span class="textDP"> Data Partition: slb</span>
       <span class="dp-accountName _ngcontent-qvy-c249">SIS Internal HQ</span>
     </p>
   </section>
@@ -52,7 +53,6 @@
   <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 </ng-template>
 
-
 <ng-template #sidenav>
   <mat-nav-list class="app-sidenav">
     <a
@@ -62,12 +62,12 @@
       [routerLink]="['home']"
     >
       <mat-icon svgIcon="home"></mat-icon>
-    </a> 
+    </a>
     <a
       class="dls-navigation-item"
       matTooltip="Settings"
       [matTooltipPosition]="'right'"
-      [routerLink]="['notifications']" 
+      [routerLink]="['notifications']"
     >
       <mat-icon svgIcon="settings"></mat-icon>
     </a>
@@ -78,10 +78,9 @@
       [routerLink]="['']"
     >
       <mat-icon svgIcon="block-diagram"></mat-icon>
-  </a>
-    
+    </a>
   </mat-nav-list>
-</ng-template> 
+</ng-template>
 
 <mat-menu #menu="matMenu">
   <a mat-menu-item matTooltip="Home" [routerLink]="['home']">
@@ -100,6 +99,5 @@
 
 <ng-template #content>
   <!-- * * * The content below is only a placeholder and can be replaced * * * -->
-  <router-outlet>
-  </router-outlet>
+  <router-outlet> </router-outlet>
 </ng-template>

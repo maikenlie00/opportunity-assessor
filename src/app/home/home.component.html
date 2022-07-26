@@ -1,11 +1,9 @@
 <div class="app-content">
-
   <!-- <div class="collapsed-analysis-label ng-star-inserted _ngcontent-qvy-c453">
     <span _ngcontent-qvy-c453>All prospect analyses</span>
   </div> Enten går det ann å lage den sidebaren her, eller så får vi lage helt ny navbar og sidebar komponenter tenker jeg! -->
 
   <div _ngcontent-cod-c371 class="board-layout">
-
     <body>
       <div class="flexbox-container-yes">
         <div
@@ -22,7 +20,11 @@
             cdkDrag
           >
             <mat-card-actions>
-              <button class="collapse" mat-button (click)="todo.collapsed = true">
+              <button
+                class="collapse"
+                mat-button
+                (click)="todo.collapsed = true"
+              >
                 Collapse
               </button>
               <button
@@ -32,27 +34,27 @@
               >
                 Uncollapse
               </button>
-              <button class="close" mat-button>X</button> <!-- Legge til variabel true/false? Må fikse onclick funskjonalitet (click)="onNoClick()" -->
+              <button class="close" mat-button>X</button>
+              <!-- Legge til variabel true/false? Må fikse onclick funskjonalitet (click)="onNoClick()" -->
             </mat-card-actions>
             <mat-card-header class="title">
               <mat-card-title class="title">{{ todo.title }}</mat-card-title>
             </mat-card-header>
             <div class="imagec">
-            <mat-card-content *ngIf="!todo.collapsed" class="image-container">
-              <img class="image" src={{todo.content}} alt="image" />
-            </mat-card-content>
-          </div>
+              <mat-card-content *ngIf="!todo.collapsed" class="image-container">
+                <img class="image" src="{{ todo.content }}" alt="image" />
+              </mat-card-content>
+            </div>
           </mat-card>
         </div>
         <!-- <button title="toggle" type="button" class="dls-sidenav-toggle-button ng-tns-c203-0 ng-star-inserted close" ng-reflect-ng-class="[object Object]">
           :: after
         </button> -->
 
-
         <!-- <button class="expcoll" (click)="toggleCollapse()">
           <h3 class= "hiddenbutton">Show the removed items</h3>
         </button>
-           <div class="hello" *ngIf="!isCollapsed"> --> 
+           <div class="hello" *ngIf="!isCollapsed"> -->
         <div
           class="keeplist"
           cdkDropList
@@ -62,7 +64,7 @@
           (cdkDropListDropped)="onDrop($event)"
         >
           <h2>Unactive cards</h2>
-  
+
           <div
             class="flexbox-item hiddencards"
             *ngFor="let complete of completed"

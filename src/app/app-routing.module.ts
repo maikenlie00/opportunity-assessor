@@ -1,54 +1,52 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
-import { HomeComponent } from './home/home.component';
-import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
-import { NotificationsComponent } from './notifications/notifications.component';
-import { StartComponent } from './start/start.component';
+import { HomeComponent } from "./home/home.component";
+import { ThemeSwitcherComponent } from "./theme-switcher/theme-switcher.component";
+import { NotificationsComponent } from "./notifications/notifications.component";
+import { StartComponent } from "./start/start.component";
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: '/start',
-    pathMatch: 'full',
-    
+    path: "",
+    redirectTo: "/start",
+    pathMatch: "full",
   },
   {
-    path: 'start',
+    path: "start",
     component: StartComponent,
     data: {
-      title: 'Prospect Assessment',
+      title: "Prospect Assessment",
     },
   },
   {
-    path: 'home',
+    path: "home",
     component: HomeComponent,
     data: {
-      showHeader: false,
-      title: 'Cod analysis (#5369)'
-      
+      showHeader: true,
+      title: "Cod analysis (#5369)",
     },
   },
   {
-    path: 'notifications',
+    path: "notifications",
     component: NotificationsComponent,
     data: {
       showHeader: false,
-      title: 'Build-In Notifications',
+      title: "Build-In Notifications",
     },
   },
   {
-    path: 'themes',
+    path: "themes",
     component: ThemeSwitcherComponent,
     data: {
-      title: 'Theme Switching',
+      title: "Theme Switching",
       showHeader: false,
     },
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: "legacy" })],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
