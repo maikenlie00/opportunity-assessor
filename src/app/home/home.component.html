@@ -69,7 +69,7 @@
             *ngFor="let complete of completed"
             cdkDrag
           >
-            <mat-card-header>
+            <mat-card-header matTooltip="{{this.complete.title + '-card'}}">
               <mat-card-title> {{ this.complete.title }}</mat-card-title>
               <mat-card-subtitle></mat-card-subtitle>
             </mat-card-header>
