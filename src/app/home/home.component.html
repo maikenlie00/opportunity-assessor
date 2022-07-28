@@ -14,46 +14,81 @@
           [cdkDropListConnectedTo]="doneList"
           (cdkDropListDropped)="onDrop($event)"
         >
-          <mat-card
+          <mat-accordion
+            class="flexbox-item"
+            *ngFor="let todo of components"
+            cdkDrag
+          >
+            <mat-expansion-panel
+            class="panels"
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+            expanded
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title class="title">
+                  {{ todo?.title }}</mat-panel-title
+                >
+                <mat-panel-description>
+                  <!--<button>collapse</button> {{ panelOpenState ? "open" : "closed" }} -->
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="image-c">
+                <mat-card-content
+                  class="image-container"
+                  *ngIf="!todo.collapsed"
+                >
+                  <img class="image" src="{{ todo.content }}" alt="image" />
+                </mat-card-content>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <!--  <mat-card
             class="flexbox-item showncards"
             *ngFor="let todo of components"
             cdkDrag
           >
-            <mat-card-actions>
+            <mat-card-actions class="headline">
+              <mat-card-header class="title">
+                <mat-card-title class="title">{{ todo?.title }}</mat-card-title>
+              </mat-card-header>
+              <div>
+                <button
+                  class="collapse"
+                  mat-button
+                  (click)="todo.collapsed = true"
+                >
+                  Collapse
+                </button>
+                <button
+                  class="uncollapse"
+                  mat-button
+                  (click)="todo.collapsed = false"
+                >
+                  Uncollapse
+                </button>
+              </div>
+
               <button
-                class="collapse"
+                class="close"
                 mat-button
-                (click)="todo.collapsed = true"
+                (click)="todo.cross = true"
+                (click)="onNoClick()"
               >
-                Collapse
+                X
               </button>
-              <button
-                class="collapse"
-                mat-button
-                (click)="todo.collapsed = false"
-              >
-                Uncollapse
-              </button>
-              <button class="close" mat-button (click)="todo.cross = true" (click)="onNoClick()">X</button> <!-- Legge til variabel true/false? Må fikse onclick funskjonalitet (click)="onNoClick()" -->
+             
             </mat-card-actions>
-            <mat-card-header class="title">
-              <mat-card-title class="title">{{ todo?.title }}</mat-card-title>
-            </mat-card-header>
+
             <div class="imagec">
-              <mat-card-content *ngIf="!todo.collapsed" class="image-container">
+              <mat-card-content class="image-container" *ngIf="!todo.collapsed">
                 <img class="image" src="{{ todo.content }}" alt="image" />
               </mat-card-content>
             </div>
-          </mat-card>
+          </mat-card> -->
         </div>
-        <!-- <button title="toggle" type="button" class="dlsx-sidenav-toggle-button ng-tns-c203-0 ng-star-inserted close" ng-reflect-ng-class="[object Object]">
-          :: after
-        </button> -->
 
-        <!-- <button class="expcoll" (click)="toggleCollapse()">
-          <h3 class= "hiddenbutton">Show the removed items</h3>
-        </button>
-           <div class="hello" *ngIf="!isCollapsed"> -->
+        <!--KEEPLIST-->
         <div
           class="keeplist"
           cdkDropList
