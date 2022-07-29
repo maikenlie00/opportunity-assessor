@@ -2,8 +2,14 @@
   width: 40px;
 }
 
-slb-framework-page-header {
+// FARGE PÅ INNERSTE DELEN AV HEADER (MEN IKKE YTTERSTE)
+/* slb-framework-page-header {
   background-color: grey;
+} */
+
+.app-navbar{
+  display: flex;
+  margin-top: 20px;
 }
 
 .slbpageheader{
