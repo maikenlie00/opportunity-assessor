@@ -20,11 +20,13 @@ export class HomeComponent implements OnInit {
   constructor() {}
   ngOnInit(): void {}
 
-  comp1 = new BlockLicensesComponent();
-  comp2 = new ContributorsComponent();
-  comp3 = new DescriptionComponent();
-  comp4 = new PropertiesComponent();
-  comp5 = new ResourcesComponent();
+  panelOpenState: boolean = false;
+ 
+  comp2 = new BlockLicensesComponent();
+  comp4 = new ContributorsComponent();
+  comp1 = new DescriptionComponent();
+  comp5 = new PropertiesComponent();
+  comp3 = new ResourcesComponent();
   comp6 = new RisksComponent();
 
   components = [
@@ -71,9 +73,9 @@ export class HomeComponent implements OnInit {
   doneList = []; // Hva gjør egentlig denne?, skjønner at den brukes
 
 
-  toggleCollapse() {
+/*   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
-  }
+  } */
 
   completed = [
     { 
@@ -127,5 +129,13 @@ onNoClick() {
       this.components.splice(strIndex, 1);
   }
   });
+  }
+
+  onClick(){
+    this.components.forEach(element => {
+      if(element.collapsed){
+        
+      }
+    })
   }
 }
