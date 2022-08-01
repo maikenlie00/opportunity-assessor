@@ -39,6 +39,14 @@
                   *ngIf="!todo.collapsed"
                 >
                   <img class="image" src="{{ todo.content }}" alt="image" />
+                <!--  <button
+                class="close"
+                mat-button
+                (click)="todo.cross = true"
+                (click)="onNoClick()"
+              >
+                X
+              </button> -->
                 </mat-card-content>
               </div>
             </mat-expansion-panel>
@@ -97,7 +105,7 @@
           [cdkDropListConnectedTo]="[componentList]"
           (cdkDropListDropped)="onDrop($event)"
         >
-          <h2>Unactive cards</h2>
+          <h2>Inactive cards</h2>
 
           <div
             class="flexbox-item hiddencards"
