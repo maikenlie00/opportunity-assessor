@@ -110,7 +110,7 @@ export class HomeComponent implements OnInit {
       this.components[event.previousIndex] =
         this.components[event.currentIndex];
       this.components[event.currentIndex] = oldtarget;
-    } else if (this.components.length > 1 || this.completed.length == 5) {
+    } else if (this.components.length > 1 || this.completed.length == 6) {
       console.log("hei");
       transferArrayItem(
         event.previousContainer.data,
