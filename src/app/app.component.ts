@@ -3,9 +3,10 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router, RoutesRecognized } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { LinkItem, isDefined } from '@slb-dls/angular-material/shared';
 import { SlbNotificationItem } from '@slb-dls/angular-material/notifications-panel';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
     selector: 'app-root',
@@ -22,11 +23,13 @@ export class AppComponent implements OnDestroy {
     secondaryLinks: LinkItem[] = [];
 
     private routerSubscription = Subscription.EMPTY;
+    items: Observable<any[]>;
 
     constructor(
         router: Router,
         matIconRegistry: MatIconRegistry,
-        domSanitizer: DomSanitizer
+        domSanitizer: DomSanitizer,
+        firestore: AngularFirestore
     ) {
         matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg-symbols.svg'));
 
@@ -34,6 +37,8 @@ export class AppComponent implements OnDestroy {
             filter(e => e instanceof RoutesRecognized),
             map(e => e as RoutesRecognized))
         .subscribe(e => this.onRouteChange(e));
+
+        this.items = firestore.collection('items').valueChanges();
     }
 
     ngOnDestroy(): void {

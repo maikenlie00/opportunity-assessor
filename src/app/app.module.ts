@@ -74,7 +74,10 @@ import { NavbarComponent } from "./navandsidebar/navbar/navbar.component";
 import { SidebarComponent } from "./navandsidebar/sidebar/sidebar.component";
 import { MatTabsModule } from "@angular/material/tabs";
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import { environment } from "src/environments/environment";
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import { LoginComponent } from './login/login.component';
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: "outline",
@@ -99,6 +102,7 @@ const defaultColor = {
     StartComponent,
     NavbarComponent,
     SidebarComponent,
+    LoginComponent,
   ],
 
   imports: [
@@ -137,6 +141,8 @@ const defaultColor = {
     SlbLogoutModule,
     MatTabsModule,
     MatExpansionModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
 
   ],
   providers: [

@@ -4,6 +4,15 @@
 
 export const environment = {
   production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyBfvuNzT7YOIV5QmMi4eI03dvKqEE33mnQ",
+    authDomain: "opportunity-assessor.firebaseapp.com",
+    projectId: "opportunity-assessor",
+    storageBucket: "opportunity-assessor.appspot.com",
+    messagingSenderId: "250752882900",
+    appId: "1:250752882900:web:c8c51f471513d983c20341",
+    measurementId: "G-0Q8SSDEWR8",
+  },
 };
 
 /*
