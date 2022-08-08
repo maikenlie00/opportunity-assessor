@@ -73,6 +73,8 @@ import { StartComponent } from "./start/start.component";
 import { NavbarComponent } from "./navandsidebar/navbar/navbar.component";
 import { SidebarComponent } from "./navandsidebar/sidebar/sidebar.component";
 import { MatTabsModule } from "@angular/material/tabs";
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: "outline",
@@ -134,6 +136,8 @@ const defaultColor = {
     SlbBreadcrumbsModule,
     SlbLogoutModule,
     MatTabsModule,
+    MatExpansionModule,
+
   ],
   providers: [
     { provide: SLB_THEMING_OPTIONS, useValue: themeConfig },

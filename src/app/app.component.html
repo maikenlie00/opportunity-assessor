@@ -18,25 +18,21 @@
     <ng-content *ngTemplateOutlet="content"></ng-content>
   </slb-framework-content>
 
+
+
+  <!-- dls-slb navbar som det IKKE GÅR AN å bytte farge på -->
   <slb-framework-page-header
     class="header2"
     *ngIf="showHeader"
     [pageTitle]="pageTitle"
     [items]="secondaryLinks"
-  >
-    <!-- <div class="prospect-header-left">
-    <div class="prospect-elements">
-    <span class="mat-tool-trip-trigger">
-      <mat-icon role="img" svgIcon="geox-prospectanalysis"></mat-icon>
-      Cod Low (#5369)</span>
-    <p class="content">
-       <mat-icon role="img" svgIcon="geox-prospectanalysis"> Cod analysis</mat-icon> 
-      Cod analysis<span class="id-label">(#5370)</span>
-    </p>
-  </div>
-  </div> Prøver å lage overskriften sånn som de har hatt den, men vanskelig-->
-  </slb-framework-page-header>
+   
+  > 
+    
+ </slb-framework-page-header>
+ 
 </slb-navigation-framework>
+
 
 <ng-template #toolbar>
   <!-- * * * The content below is only a placeholder and can be replaced * * * -->
@@ -53,6 +49,7 @@
   <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 </ng-template>
 
+
 <ng-template #sidenav>
   <mat-nav-list class="app-sidenav">
     <a
@@ -67,7 +64,7 @@
       class="dls-navigation-item"
       matTooltip="Settings"
       [matTooltipPosition]="'right'"
-      [routerLink]="['notifications']"
+      [routerLink]="['']"
     >
        <mat-icon svgIcon="settings"></mat-icon> 
     </a>
